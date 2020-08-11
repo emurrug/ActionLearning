@@ -11,11 +11,13 @@
 #about using R, and some content/resources about statistical analysis methods broadly. 
 
 #All the files related to this project are currently being privately hosted on Github
-# at https://github.com/emurrug/ActionLearning.git
+# at https://github.com/emurrug/ActionLearning.git. 
+#I recommend that you download GitHub Desktop and work directly from the R files 
+#already in the GitHub respository (rather than downloading/reuploading).
 
 
 
-#### PROJECT GOALS (bird's eye view) ####
+#### PROJECT OUTLINE (bird's eye view) ####
 
 ##What are the independent variables (IVs)?##
 #Action learning [AL] (Action vs. Control; categorical binary)
@@ -142,28 +144,69 @@ plot(model)
 #### STATISTICAL TECHNIQUES FOR GOALS (theoretical) ####
 #Looking back to the PROJECT GOALS, we see that our main IVs and main DVs are mostly categorical. 
 #Generally, ANOVAs are best to use when you are interested in comparing means between two or more
-#categorical groups. However, binary DVs automatically violate the assumptions needed for a linear model.
-#This means you can use an ANOVA for the likert scale DV.
+#categorical groups. However, binary DVs automatically violate the assumptions needed for a linear model. 
+#Therefore we will ahve to get a bit more creative...
 
 #To run a test where the IV is categorical and the DV is categorical, you will need a 2x2 Chi-Square test. 
 #Instead of measuring means, Chi-squares compares the frequency of results (e.g., % of responses that were correct vs. incorrect)
 #to the expected frequency of results if it were random. Funny enough, this is exactly what a test of homogenity is.
-#You will then have to follow this up with a odds-ratio test to see if there is an interaction.
-https://www-ncbi-nlm-nih-gov.proxy.library.cornell.edu/pmc/articles/PMC2797398/
-  
-  
+#You will then have to follow this up with a odds-ratio test to see if there is an interaction 
+#(the wikipedia page for "Odds ratio" has a lot of useful examples for reference).
+
+#Note: There is some debate about whether a likert scale item should be treated as a continuous or a categorical variable. 
+#I also have opinions here. Therefore, I will include the code to do an ANOVA (treating it categorically) and 
+#a linear regression (treating it as continuous). 
 
 
 
+#### STATISTICAL ANALYSIS (implmented) ####
+
+#Format for odds-ratio test: 
+model1 <- oddsratio(a, b, c, d, conf.level = 0.95, p.calc.by.independence = TRUE)
+print(model1)
+#a-d corresponds to each of the cells in a 2x2 matrix of action/control X statistical/random.
+#the numbers that go in here should be the number of correct responses in either the recall or recognition task
+
+#The ANOVA test: 
+model2 <- aov(df$LikertDV ~ df$actionIV * df$statisticalIV)
+summary(model2)
+# The asterisk here is testing for an interaction effect. If you only want to look at main effects without
+# the interaction, you should add a "+" instead. 
+
+#The linear regression test: 
+model3 <- lm(df$LikertDV ~ df$actionIV * df$statisticalIV) #notice the similarity to the ANOVA. There's a theoretical reason for that!
+summary(model3)
 
 
-#### STATISTICAL ANALYSIS (implmened) ####
+#Now that you have the basic format of each of the tests that you need, try it out with the demographic variables
+#and see if they predict any of the dependenct variables of interest.
+
 
 #### GRAPHING ####
+#ggplot2 is a really cool tool because it works by adding layers to an image
+#for example, first you add the variables (dictating the scale and axes), then you add the graph type (the pretty part), 
+#and then finally you add the details like labels and colors. This means there's a lot of ways to find the graph
+#that makes the data easiest to digest to the readers. Focus on your audience when you create a graph -- it's easy
+#to get carried away!
+
+#Here is an example I found for odds-ratio (this may or may not be the best method):
+#https://stackoverflow.com/questions/47085514/simple-way-to-visualise-odds-ratios-in-r
+#here is another package that's based on ggplot and might help: 
+#https://finalfit.org/reference/or_plot.html
+
+
+
 
 #### SUMMARIZING RESULTS####
 
-# APA format!
+# APA format! 
+# Example: "Memory recognition was significantly predicted by the interaction of action learning and statistical presentation 
+# such that individuals who were in the action learning condition were more likely to correctly recognize the next action sequence
+# in a trigram, but only when exposed to statistically predictable stimuli, (R^3 = , CI = [], p = )."
+
+# The above statement is pretty standard issue when doing regressions/ANOVAs. However, odds ratios are a bit more complex.
+# You will have to present in probabilities. Here is a good breakdown of how to describe it: 
+# https://www.theanalysisfactor.com/why-use-odds-ratios/#:~:text=Odds%20ratios%20are%20one%20of,to%20wrap%20your%20head%20around.&text=For%20example%2C%20in%20logistic%20regression,phrase%20here%20is%20constant%20effect.
 
 
 
