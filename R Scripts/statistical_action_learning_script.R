@@ -209,9 +209,6 @@ summary(model3)
 # https://www.theanalysisfactor.com/why-use-odds-ratios/#:~:text=Odds%20ratios%20are%20one%20of,to%20wrap%20your%20head%20around.&text=For%20example%2C%20in%20logistic%20regression,phrase%20here%20is%20constant%20effect.
 
 
-
-
-
-##HELLO WORLD
+###Good luck! You got this!
 
 
