@@ -211,4 +211,4 @@ summary(model3)
 
 ###Good luck! You got this!
 
-
+###Thanks, Emma. :)
