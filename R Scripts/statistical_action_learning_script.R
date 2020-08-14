@@ -13,7 +13,7 @@
 #All the files related to this project are currently being privately hosted on Github
 # at https://github.com/emurrug/ActionLearning.git. 
 #I recommend that you download GitHub Desktop and work directly from the R files 
-#already in the GitHub respository (rather than downloading/reuploading).
+#already in the GitHub repository (rather than downloading/re-uploading).
 
 
 
@@ -21,14 +21,14 @@
 
 ##What are the independent variables (IVs)?##
 #Action learning [AL] (Action vs. Control; categorical binary)
-#Statisticl Regularity [SR] (Statiscal vs Random; Categorical binary)
+#Statistical Regularity [SR] (Statistical vs Random; Categorical binary)
 
 
 ##What are the dependent variables (DVs)?##
 #Recognition of correct pattern (Categorical binary)
 #Confidence in recognition (Continuous; likert 1-7)
 #Recall of correct pattern (Categorical binary)
-#Confidence of recall (Continuouslikert 1-7)
+#Confidence of recall (Continuous likert 1-7)
 
 
 ##How does the study design impact the test?##
@@ -49,7 +49,7 @@
 #First thing's first, if you are using RStudio (which you better be)
 #look at the line above the console and below the script. It should have the
 #section titled (e.g. "GETTING STARTED"). Click on this. This should help you 
-#scroll through sections faster. You can also collpase sections that you don't want to see.
+#scroll through sections faster. You can also collapse sections that you don't want to see.
 
 #The RStudio window has a lot of features that you should take the time to explore. 
 #Also if you ever have any doubt about new code, go to the documentation! 
@@ -58,7 +58,7 @@
 
 
 #First, let's import any relevant packages we will use for our study. 
-#TThat way we don't have to write new functions for all of our needs!
+#That way we don't have to write new functions for all of our needs!
 #The first time you use the package, you will have to use the function "install.packages("PackageName")"
 #After that, just call the package with the "library" function
 
@@ -79,9 +79,9 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 myfile <- "https://raw.github.com/user/repository/branch/file.name"  
 df <- read_csv(myfile, col_names = TRUE, na = c("", "NA"))  
 
-# "df" is a standard shorthand for "dataframe"
+in# "df" is a standard shorthand for "dataframe"
 #'col_names' lets the reader know that the first line of the data is variable names and not data
-#'na = c(...)' is saying: "cells with the following entries should be considered NA in the datafile
+#'na = c(...)' is saying: "cells with the following entries should be considered NA in the data file
 
 
 #You can also import the file directly from your computer. To do this, you just put your path
