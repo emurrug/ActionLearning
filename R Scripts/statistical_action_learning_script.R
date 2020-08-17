@@ -63,7 +63,7 @@
 #After that, just call the package with the "library" function
 
 library (readr)   #reading CSV's
-library (kable)   #formatting table
+library (kableExtra)   #formatting table
 library (pastecs) #describes data
 library (dplyr)   #manipulating data to view it
 library (ggplot2) #visualizing data with graphs (we don't talk about the first "ggplot")
@@ -76,7 +76,7 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 #The benefit to using file sharing accounts like GitHub or Dropbox is that everyone
 #has access to the most updated CSV of the data. In R, you are also able to import CSV files directly from github:
 
-myfile <- "https://raw.github.com/user/repository/branch/file.name"  
+myfile <- "https://github.com/emurrug/ActionLearning/blob/master/Data/Pilot%20Data%20All.csv"  
 df <- read_csv(myfile, col_names = TRUE, na = c("", "NA"))  
 
 in# "df" is a standard shorthand for "dataframe"
