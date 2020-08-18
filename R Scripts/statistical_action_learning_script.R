@@ -76,10 +76,10 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 #The benefit to using file sharing accounts like GitHub or Dropbox is that everyone
 #has access to the most updated CSV of the data. In R, you are also able to import CSV files directly from github:
 
-myfile <- "https://github.com/emurrug/ActionLearning/blob/master/Data/Pilot%20Data%20All.csv"  
-df <- read_csv(myfile, col_names = TRUE, na = c("", "NA"))  
+myfile <- "https://raw.githubusercontent.com/emurrug/ActionLearning/master/Data/Pilot%20Data%20All.csv"
+df <- read_csv(myfile)
 
-in# "df" is a standard shorthand for "dataframe"
+# "df" is a standard shorthand for "dataframe"
 #'col_names' lets the reader know that the first line of the data is variable names and not data
 #'na = c(...)' is saying: "cells with the following entries should be considered NA in the data file
 
@@ -88,7 +88,7 @@ in# "df" is a standard shorthand for "dataframe"
 #directory instead of a URL. 
 
 #to view your first few lines you do 
-kable(head(df))
+head(df)
 #or to view the whole table at once 
 View(df)
 
