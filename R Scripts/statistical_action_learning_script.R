@@ -110,7 +110,7 @@ str(df)
 is.factor(df$variable) #OR
 is.numeric(df$variable)
 
-#The next thing to do is look at the descriptive statstics for your variables (e.g. range, central tendency, & variablility)
+#The next thing to do is look at the descriptive statistics for your variables (e.g. range, central tendency, & variabilility)
 #Make sure that these numbers make sense (e.g., is there an impossible age? is the SD ridiculously high?)
 #There are a lot of good ways to do this: https://www.statmethods.net/stats/descriptives.html
 
