@@ -78,6 +78,7 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 
 myfile <- "https://raw.githubusercontent.com/emurrug/ActionLearning/master/Data/Pilot%20Data%20All.csv"
 df <- read_csv(myfile)
+df <- df[-1,]
 
 # "df" is a standard shorthand for "dataframe"
 #'col_names' lets the reader know that the first line of the data is variable names and not data
@@ -110,6 +111,10 @@ str(df)
 is.factor(df$variable) #OR
 is.numeric(df$variable)
 
+#to change the variable type permanently, in case R is reading a variable as the incorrect type
+as.factor(df$variable)
+as.numeric(df$variable)
+
 #The next thing to do is look at the descriptive statistics for your variables (e.g. range, central tendency, & variabilility)
 #Make sure that these numbers make sense (e.g., is there an impossible age? is the SD ridiculously high?)
 #There are a lot of good ways to do this: https://www.statmethods.net/stats/descriptives.html
@@ -120,8 +125,8 @@ stat.desc(df$variable)
 #are/aren't violating any statistical assumptions (e.g. normality, linearity, homogeneity, etc.)
 
 #first, let's visualize the shape of the data: 
-ggplot(df, aes(x = df$variable)) + #specifies your x,y of interest (no Y here since it is a histogram)
-  geom_histogram(binwidth = 1, color = "black", fill = "white") #tinker with color and size
+ggplot(df, aes(x = df$variable, na.rm = TRUE)) + #specifies your x,y of interest (no Y here since it is a histogram)
+  geom_bar(color = "black", fill = "white", stat = "count") #tinker with color and size
   
 #how are the variables correlated with one another? 
 > pairs(~var1+var2+var3+var4+varetc,data=df, +
