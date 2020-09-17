@@ -77,16 +77,12 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 #has access to the most updated CSV of the data. In R, you are also able to import CSV files directly from github:
 
 myfile <- "https://raw.githubusercontent.com/emurrug/ActionLearning/master/Data/Pilot%20Data%20All.csv"
-df <- read_csv(myfile)
-df <- df[-1,]
-
-# "df" is a standard shorthand for "dataframe"
-#'col_names' lets the reader know that the first line of the data is variable names and not data
-#'na = c(...)' is saying: "cells with the following entries should be considered NA in the data file
-
-
 #You can also import the file directly from your computer. To do this, you just put your path
 #directory instead of a URL. 
+df <- read_csv(myfile)
+df <- df[-1,] #EM: removes the first row of the data (since this is a Qualtrics file w/ two headers)
+
+# "df" is a standard shorthand for "dataframe"
 
 #to view your first few lines you do 
 head(df)
@@ -98,6 +94,14 @@ View(df)
 #### CLEANING & VISUALIZING DATA ####
 
 #I don't care if it's just a quick peek, you should always do these steps!
+
+
+### LABELLING YOUR VARIABLES
+
+df <- na.omit(df) #EM: removes rows with NAs in them. 
+#If you want to remove them based on unfinished surveys (not NAs), I recommend this instead: 
+#df<-df[!(df$Finished=="0"),]
+
 
 #You remember NOIR? (Nominal, Ordinal, Interval, Ratio)
 #The first step is to make sure that your variables are labelled appropriately.
@@ -112,8 +116,36 @@ is.factor(df$variable) #OR
 is.numeric(df$variable)
 
 #to change the variable type permanently, in case R is reading a variable as the incorrect type
-as.factor(df$variable)
-as.numeric(df$variable)
+df$variable <- as.factor(df$variable) #to make it categorical
+df$variable <- as.numeric(df$variable) #to make it continuous
+
+#EM: You'll notice this dataset is labelled as all characters. To make our lives easier, let's go ahead
+#and convert all the "character" columns into factors all at once (rather than one at a time)
+
+df <- df %>% mutate_if(is.character,as.factor)
+
+#EM: if you want to take the likert scales and make these numeric (so you can get an average, for example)
+#you can select specific columns and make only these numeric
+num.columns <- c('T-1_Likert_1', 'T-2_Likert_1', 'T-3_Likert_1', 'T-4_Likert_1')
+df[num.columns] <- sapply(df[num.columns], as.numeric)
+
+#always double check it looks good: 
+str(df)
+
+
+### CREATING NEW VARIABLES
+
+#EM: Lets say we want to take the average several related variables, and create a new column from this
+#there's so many ways to do this, but lets go ahead and keep using dplyr
+#here is a good resource for examples of how to create/modify variables https://dplyr.tidyverse.org/reference/mutate.html
+
+df <- df %>% 
+  mutate(MeanRecognition = mean(c(`T-1_Likert_1`, `T-2_Likert_1`, `T-3_Likert_1`,`T-4_Likert_1`)))
+
+#Another way to visualize the exact same function is a simple "averaging equation": 
+df$MeanRecognition <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_1` + df$`T-4_Likert_1`)/4)
+
+### VIEWING DESCRIPTIVES
 
 #The next thing to do is look at the descriptive statistics for your variables (e.g. range, central tendency, & variabilility)
 #Make sure that these numbers make sense (e.g., is there an impossible age? is the SD ridiculously high?)
