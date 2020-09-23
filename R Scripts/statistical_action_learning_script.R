@@ -126,7 +126,7 @@ df <- df %>% mutate_if(is.character,as.factor)
 
 #EM: if you want to take the likert scales and make these numeric (so you can get an average, for example)
 #you can select specific columns and make only these numeric
-num.columns <- c('T-1_Likert_1', 'T-2_Likert_1', 'T-3_Likert_1', 'T-4_Likert_1')
+num.columns <- c('T-1_Likert_1', 'T-2_Likert_1', 'T-3_Likert_1', 'T-4_Likert_1', 'UT-1_Likert_1', 'UT-2_Likert_1', 'UT-3_Likert_1', 'UT-4_Likert_1')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 #always double check it looks good: 
@@ -137,13 +137,20 @@ str(df)
 
 #EM: Lets say we want to take the average several related variables, and create a new column from this
 #there's so many ways to do this, but lets go ahead and keep using dplyr
+#MC: This method didn't work as well for me as the one starting on line 149.
 #here is a good resource for examples of how to create/modify variables https://dplyr.tidyverse.org/reference/mutate.html
 
 df <- df %>% 
-  mutate(MeanRecognition = mean(c(`T-1_Likert_1`, `T-2_Likert_1`, `T-3_Likert_1`,`T-4_Likert_1`)))
+  mutate(MeanRecognitionT = mean(c(`T-1_Likert_1`, `T-2_Likert_1`, `T-3_Likert_1`,`T-4_Likert_1`)))
+
+df <- df %>% 
+  mutate(MeanRecognitionUT = mean(c(`UT-1_Likert_1`, `UT-2_Likert_1`, `UT-3_Likert_1`,`UT-4_Likert_1`)))
 
 #Another way to visualize the exact same function is a simple "averaging equation": 
-df$MeanRecognition <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_1` + df$`T-4_Likert_1`)/4)
+#MC: This one worked better for me for some reason.
+df$MeanRecognitionT <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_1` + df$`T-4_Likert_1`)/4)
+
+df$MeanRecognitionUT <- ((df$`UT-1_Likert_1` + df$`UT-2_Likert_1` + df$`UT-3_Likert_1` + df$`UT-4_Likert_1`)/4)
 
 ### VIEWING DESCRIPTIVES
 
