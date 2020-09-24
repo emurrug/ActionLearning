@@ -137,7 +137,7 @@ str(df)
 
 #EM: Lets say we want to take the average several related variables, and create a new column from this
 #there's so many ways to do this, but lets go ahead and keep using dplyr
-#MC: This method didn't work as well for me as the one starting on line 149.
+#MC: This method didn't work as well for me as the method below.
 #here is a good resource for examples of how to create/modify variables https://dplyr.tidyverse.org/reference/mutate.html
 
 df <- df %>% 
@@ -147,10 +147,15 @@ df <- df %>%
   mutate(MeanRecognitionUT = mean(c(`UT-1_Likert_1`, `UT-2_Likert_1`, `UT-3_Likert_1`,`UT-4_Likert_1`)))
 
 #Another way to visualize the exact same function is a simple "averaging equation": 
-#MC: This one worked better for me for some reason.
+#MC: This method worked better for me for some reason.
+
+#Familiar vs. unfamiliar trigrams: composite scores for Likerts
 df$MeanRecognitionT <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_1` + df$`T-4_Likert_1`)/4)
 
 df$MeanRecognitionUT <- ((df$`UT-1_Likert_1` + df$`UT-2_Likert_1` + df$`UT-3_Likert_1` + df$`UT-4_Likert_1`)/4)
+
+#Statistical learning vs. random stimuli: composite scores for Likerts
+
 
 ### VIEWING DESCRIPTIVES
 
