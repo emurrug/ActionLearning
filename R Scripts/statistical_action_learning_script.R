@@ -127,6 +127,8 @@ df <- df %>% mutate_if(is.character,as.factor)
 #EM: if you want to take the likert scales and make these numeric (so you can get an average, for example)
 #you can select specific columns and make only these numeric
 num.columns <- c('T-1_Likert_1', 'T-2_Likert_1', 'T-3_Likert_1', 'T-4_Likert_1', 'UT-1_Likert_1', 'UT-2_Likert_1', 'UT-3_Likert_1', 'UT-4_Likert_1')
+num.columns <- c('T-1_Recognition', 'T-2_Recognition', 'T-3_Recognition', 'T-4_Recognition', 'UT-1_Recognition', 'UT-2_Recognition', 'UT-3_Recognition', 'UT-4_Recognition')
+num.columns <- c('T-1c_Likert_1', 'T-2c_Likert_1', 'T-3c_Likert_1', 'T-4c_Likert_1', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 #always double check it looks good: 
@@ -188,13 +190,15 @@ plot(model)
 #Follow up tests and other considerations will depend on the shape of your data and the tests you will run..
 #I won't go into that here, since there is too much to cover.
 
+### FINDING THE AVERAGES OF ROWS
+rowMeans(df)
 
 
 #### STATISTICAL TECHNIQUES FOR GOALS (theoretical) ####
 #Looking back to the PROJECT GOALS, we see that our main IVs and main DVs are mostly categorical. 
 #Generally, ANOVAs are best to use when you are interested in comparing means between two or more
 #categorical groups. However, binary DVs automatically violate the assumptions needed for a linear model. 
-#Therefore we will ahve to get a bit more creative...
+#Therefore we will have to get a bit more creative...
 
 #To run a test where the IV is categorical and the DV is categorical, you will need a 2x2 Chi-Square test. 
 #Instead of measuring means, Chi-squares compares the frequency of results (e.g., % of responses that were correct vs. incorrect)
