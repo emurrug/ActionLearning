@@ -152,9 +152,15 @@ df <- df %>%
 #MC: This method worked better for me for some reason.
 
 #Familiar vs. unfamiliar trigrams: composite scores for Likerts
-df$MeanRecognitionT <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_1` + df$`T-4_Likert_1`)/4)
 
-df$MeanRecognitionUT <- ((df$`UT-1_Likert_1` + df$`UT-2_Likert_1` + df$`UT-3_Likert_1` + df$`UT-4_Likert_1`)/4)
+df <- df %>%
+  rowwise() %>%
+  mutate (MeanRecognitionT = mean(c(`T-1_Likert_1`, df$`T-2_Likert_1`, df$`T-3_Likert_1`, df$`T-4_Likert_1`)))
+  
+df <- df %>%
+  rowwise() %>%
+  mutate (MeanRecognitionUT = mean(c(`UT-1_Likert_1`, df$`UT-2_Likert_1`, df$`UT-3_Likert_1`, df$`UT-4_Likert_1`)))
+  
 
 #Statistical learning vs. random stimuli:
   #This chunk differentiated between the random (0) and SL (1) stimuli by creating a new column.
@@ -164,9 +170,15 @@ df <- df %>%
                               "active - SLS-3" = 1, "passive - SLS-2" = 1))
   
   #This chunk created composite scores for random vs. SL Likerts (raw code from Emma).
-data %_% select(var_of_interestDV) %_% 
-  group_by(var_of_groups) %_%
-  summarise("Mean" = mean(var_of_interestDV))
+df %>%
+  group_by(Paradigm) %>%
+  summarise("Mean" = mean(MeanRecognitionUT))
+
+df %>%
+  group_by(Paradigm) %>%
+  summarise("MeanUT" = mean(MeanRecognitionUT), "MeanT" = mean(MeanRecognitionT))
+
+str(df)
 
 
 #Active vs. passive stimuli:
