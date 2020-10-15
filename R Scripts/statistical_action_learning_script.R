@@ -156,7 +156,28 @@ df$MeanRecognitionT <- ((df$`T-1_Likert_1` + df$`T-2_Likert_1` + df$`T-3_Likert_
 
 df$MeanRecognitionUT <- ((df$`UT-1_Likert_1` + df$`UT-2_Likert_1` + df$`UT-3_Likert_1` + df$`UT-4_Likert_1`)/4)
 
-#Statistical learning vs. random stimuli: composite scores for Likerts
+#Statistical learning vs. random stimuli:
+  #This chunk differentiated between the random (0) and SL (1) stimuli by creating a new column.
+df <- df %>%
+  mutate(Paradigm = recode(df$`condition`, "active - RS-1" = 0, "passive - RS-2" = 0, "passive - RS-2" = 0,
+                              "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
+                              "active - SLS-3" = 1, "passive - SLS-2" = 1))
+  
+  #This chunk created composite scores for random vs. SL Likerts (raw code from Emma).
+data %_% select(var_of_interestDV) %_% 
+  group_by(var_of_groups) %_%
+  summarise("Mean" = mean(var_of_interestDV))
+
+
+#Active vs. passive stimuli:
+  #This chunk differentiated between the passive (0) and active (1) stimuli by creating a new column.
+df <- df %>%
+  mutate(Condition = recode(df$`condition`, "active - RS-1" = 1, "passive - RS-2" = 0, "passive - RS-2" = 0,
+                              "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
+                              "active - SLS-3" = 1, "passive - SLS-2" = 0))
+  
+  #This chunk created composite scores for active vs. passive Likerts.
+
 
 
 ### VIEWING DESCRIPTIVES
