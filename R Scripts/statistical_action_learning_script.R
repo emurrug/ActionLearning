@@ -151,7 +151,8 @@ df <- df %>%
 #Another way to visualize the exact same function is a simple "averaging equation": 
 #MC: This method worked better for me for some reason.
 
-#Familiar vs. unfamiliar trigrams: composite scores for Likerts
+#Familiar vs. unfamiliar trigrams: calculates means of Likert scores for each trigram by row and
+#creates one new column for the familiar means, one for unfamiliar means.
 
 df <- df %>%
   rowwise() %>%
@@ -165,18 +166,17 @@ df <- df %>%
 #Statistical learning vs. random stimuli:
   #This chunk differentiated between the random (0) and SL (1) stimuli by creating a new column.
 df <- df %>%
-  mutate(Paradigm = recode(df$`condition`, "active - RS-1" = 0, "passive - RS-2" = 0, "passive - RS-2" = 0,
-                              "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
-                              "active - SLS-3" = 1, "passive - SLS-2" = 1))
+  mutate(Paradigm = recode(df$`condition`, "active - RS-1" = 0, "active - RS-1" = 0, "passive - RS-2" = 0,
+                           "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
+                           "active - SLS-3" = 1, "passive - SLS-2" = 1))
   
-  #This chunk created composite scores for random vs. SL Likerts (raw code from Emma).
+  #This chunk created composite scores for random vs. SL Likert scores by first grouping the data by
+  #Paradigm (0=random, 1=SL), then finding the mean of all MeanRecognitionT scores, then all
+  #MeanRecognitionUT scores, still separated by random vs. SL. The output is a 4x4 tibble.
+  #The lowercase "p" in the variable names distinguishes between the means for Paradigm vs. Condition.
 df %>%
   group_by(Paradigm) %>%
-  summarise("Mean" = mean(MeanRecognitionUT))
-
-df %>%
-  group_by(Paradigm) %>%
-  summarise("MeanUT" = mean(MeanRecognitionUT), "MeanT" = mean(MeanRecognitionT))
+  summarise("MeanTp" = mean(MeanRecognitionT), "MeanUTp" = mean(MeanRecognitionUT))
 
 str(df)
 
@@ -184,11 +184,17 @@ str(df)
 #Active vs. passive stimuli:
   #This chunk differentiated between the passive (0) and active (1) stimuli by creating a new column.
 df <- df %>%
-  mutate(Condition = recode(df$`condition`, "active - RS-1" = 1, "passive - RS-2" = 0, "passive - RS-2" = 0,
-                              "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
-                              "active - SLS-3" = 1, "passive - SLS-2" = 0))
+  mutate(Condition = recode(df$`condition`, "active - RS-1" = 1, "active - RS-1" = 1, "passive - RS-2" = 0,
+                            "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
+                            "active - SLS-3" = 1, "passive - SLS-2" = 0))
   
-  #This chunk created composite scores for active vs. passive Likerts.
+  #This chunk created composite scores for active vs. passive Likert scores by first grouping the
+  #data by Condition (0=passive, 1=active), then finding the mean of all MeanRecognitionT scores,
+  #then all MeanRecognitionUT scores, still separated by active vs. passive. The output is a 4x4 tibble.
+  #The lowercase "c" in the variable names distinguishes between the means for Paradigm vs. Condition.
+df %>%
+  group_by(Condition) %>%
+  summarise("MeanTc" = mean(MeanRecognitionT), "MeanUTc" = mean(MeanRecognitionUT))
 
 
 
