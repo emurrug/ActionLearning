@@ -166,7 +166,7 @@ df <- df %>%
 #Statistical learning vs. random stimuli:
   #This chunk differentiated between the random (0) and SL (1) stimuli by creating a new column.
 df <- df %>%
-  mutate(Paradigm = recode(df$`condition`, "active - RS-1" = 0, "active - RS-1" = 0, "passive - RS-2" = 0,
+  mutate(Paradigm = recode(df$`condition`,"active - RS-1" = 0, "active - RS-1" = 0, "passive - RS-2" = 0,
                            "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
                            "active - SLS-3" = 1, "passive - SLS-2" = 1))
   
