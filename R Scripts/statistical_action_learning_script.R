@@ -138,63 +138,81 @@ str(df)
 ### CREATING NEW VARIABLES
 
 #EM: Lets say we want to take the average several related variables, and create a new column from this
-#there's so many ways to do this, but lets go ahead and keep using dplyr
-#MC: This method didn't work as well for me as the method below.
+#there's so many ways to do this, but lets go ahead and keep using dplyr.
 #here is a good resource for examples of how to create/modify variables https://dplyr.tidyverse.org/reference/mutate.html
-
-df <- df %>% 
-  mutate(MeanRecognitionT = mean(c(`T-1_Likert_1`, `T-2_Likert_1`, `T-3_Likert_1`,`T-4_Likert_1`)))
-
-df <- df %>% 
-  mutate(MeanRecognitionUT = mean(c(`UT-1_Likert_1`, `UT-2_Likert_1`, `UT-3_Likert_1`,`UT-4_Likert_1`)))
-
-#Another way to visualize the exact same function is a simple "averaging equation": 
-#MC: This method worked better for me for some reason.
 
 #Familiar vs. unfamiliar trigrams: calculates means of Likert scores for each trigram by row and
 #creates one new column for the familiar means, one for unfamiliar means.
 
-df <- df %>%
+df <- df %>% 
   rowwise() %>%
-  mutate (MeanRecognitionT = mean(c(`T-1_Likert_1`, df$`T-2_Likert_1`, df$`T-3_Likert_1`, df$`T-4_Likert_1`)))
-  
-df <- df %>%
+  mutate(MeanLikertT = mean(c(`T-1_Likert_1`, `T-2_Likert_1`, `T-3_Likert_1`,`T-4_Likert_1`)))
+
+df <- df %>% 
   rowwise() %>%
-  mutate (MeanRecognitionUT = mean(c(`UT-1_Likert_1`, df$`UT-2_Likert_1`, df$`UT-3_Likert_1`, df$`UT-4_Likert_1`)))
-  
+  mutate(MeanLikertUT = mean(c(`UT-1_Likert_1`, `UT-2_Likert_1`, `UT-3_Likert_1`,`UT-4_Likert_1`)))
+
 
 #Statistical learning vs. random stimuli:
   #This chunk differentiated between the random (0) and SL (1) stimuli by creating a new column.
 df <- df %>%
-  mutate(Paradigm = recode(df$`condition`,"active - RS-1" = 0, "active - RS-1" = 0, "passive - RS-2" = 0,
+  mutate(Paradigm = recode(condition, "active - RS-1" = 0, "passive - RS-2" = 0,
                            "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
                            "active - SLS-3" = 1, "passive - SLS-2" = 1))
   
   #This chunk created composite scores for random vs. SL Likert scores by first grouping the data by
-  #Paradigm (0=random, 1=SL), then finding the mean of all MeanRecognitionT scores, then all
-  #MeanRecognitionUT scores, still separated by random vs. SL. The output is a 4x4 tibble.
+  #Paradigm (0=random, 1=SL), then finding the mean of all MeanLikertT scores, then all
+  #MeanLikertUT scores, still separated by random vs. SL. The output is a 4x4 tibble.
   #The lowercase "p" in the variable names distinguishes between the means for Paradigm vs. Condition.
 df %>%
   group_by(Paradigm) %>%
-  summarise("MeanTp" = mean(MeanRecognitionT), "MeanUTp" = mean(MeanRecognitionUT))
-
-str(df)
+  summarise("MeanTp" = mean(MeanLikertT), "MeanUTp" = mean(MeanLikertUT))
 
 
 #Active vs. passive stimuli:
   #This chunk differentiated between the passive (0) and active (1) stimuli by creating a new column.
 df <- df %>%
-  mutate(Condition = recode(df$`condition`, "active - RS-1" = 1, "active - RS-1" = 1, "passive - RS-2" = 0,
+  mutate(Condition = recode(df$`condition`, "active - RS-1" = 1, "passive - RS-2" = 0,
                             "passive - RS-3" = 0, "active - SLS-1" = 1, "active - SLS-2" = 1,
                             "active - SLS-3" = 1, "passive - SLS-2" = 0))
   
   #This chunk created composite scores for active vs. passive Likert scores by first grouping the
-  #data by Condition (0=passive, 1=active), then finding the mean of all MeanRecognitionT scores,
-  #then all MeanRecognitionUT scores, still separated by active vs. passive. The output is a 4x4 tibble.
+  #data by Condition (0=passive, 1=active), then finding the mean of all MeanLikertT scores,
+  #then all MeanLikertUT scores, still separated by active vs. passive. The output is a 4x4 tibble.
   #The lowercase "c" in the variable names distinguishes between the means for Paradigm vs. Condition.
 df %>%
   group_by(Condition) %>%
-  summarise("MeanTc" = mean(MeanRecognitionT), "MeanUTc" = mean(MeanRecognitionUT))
+  summarise("MeanTc" = mean(MeanLikertT), "MeanUTc" = mean(MeanLikertUT))
+
+
+#Were some people more confident than others? To find out, I've created a new column (MeanRecognition)
+#that averages MeanLikertT and MeanLikertUT to get an overall score per subject.
+df <- df %>% 
+  rowwise() %>%
+  mutate(MeanRecognition = mean(c(`MeanLikertT`, `MeanLikertUT`)))
+
+#To visualize the distribution of confidence, I'll plot MeanRecognition on a histogram.
+ggplot(df, aes(x = `MeanRecognition`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
+
+#Do some people always pick the same answer? The analysis above mostly answers that question, I just
+#have to calculate means for not only Likerts, but Recognition questions, too.
+df <- df %>% 
+  rowwise() %>%
+  mutate(MeanRecognitionT = mean(c(`T-1_Recognition`, `T-2_Recognition`, `T-3_Recognition`, `T-4_Recognition`)))
+
+df <- df %>% 
+  rowwise() %>%
+  mutate(MeanRecognitionUT = mean(c(`UT-1_Recognition`, `UT-2_Recognition`, `UT-3_Recognition`, `UT-4_Recognition`)))
+
+
+if('T-1_Recognition' = 1){x = 1}
+
+if('T-1_Recognition' = 2){x = 0}
+
+df <- df %>% 
+  rowwise() %>%
+  mutate(`T-1_Correct` = c(`T-1_Recognition` = 1))
 
 
 
