@@ -185,14 +185,14 @@ df %>%
   summarise("MeanTc" = mean(MeanLikertT), "MeanUTc" = mean(MeanLikertUT))
 
 
-#Were some people more confident than others? To find out, I've created a new column (MeanRecognition)
+#Were some people more confident than others? To find out, I've created a new column (MeanLikert)
 #that averages MeanLikertT and MeanLikertUT to get an overall score per subject.
 df <- df %>% 
   rowwise() %>%
-  mutate(MeanRecognition = mean(c(`MeanLikertT`, `MeanLikertUT`)))
+  mutate(MeanLikert = mean(c(`MeanLikertT`, `MeanLikertUT`)))
 
-#To visualize the distribution of confidence, I'll plot MeanRecognition on a histogram.
-ggplot(df, aes(x = `MeanRecognition`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+#To visualize the distribution of confidence, I'll plot MeanLikert on a histogram.
+ggplot(df, aes(x = `MeanLikert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
 
 
 #Do some people always pick the same answer? The analysis above mostly answers that question, I just
@@ -205,6 +205,15 @@ df <- df %>%
   rowwise() %>%
   mutate(MeanRecognitionUT = mean(c(`UT-1_Recognition`, `UT-2_Recognition`, `UT-3_Recognition`, `UT-4_Recognition`)))
 
+df <- df %>% 
+  rowwise() %>%
+  mutate(MeanRecognition = mean(c(`MeanRecognitionT`, `MeanRecognitionUT`)))
+
+#To visualize the distribution of recognition, I'll plot MeanRecognitionT and MeanRecognitionUT.
+ggplot(df, aes(x = `MeanRecognitionT`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
+ggplot(df, aes(x = `MeanRecognitionUT`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
 
 if('T-1_Recognition' = 1){x = 1}
 
@@ -212,7 +221,7 @@ if('T-1_Recognition' = 2){x = 0}
 
 df <- df %>% 
   rowwise() %>%
-  mutate(`T-1_Correct` = c(`T-1_Recognition` = 1))
+  mutate(`T-1_Correct` = x)
 
 
 
