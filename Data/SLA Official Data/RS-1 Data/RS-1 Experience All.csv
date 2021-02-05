@@ -1,0 +1,22 @@
+ResponseId,RecordedDate,StartDate,EndDate,Finished,condition,Dance_Forms,Martial_Arts,Outdoor_Activities,Sports
+Response ID,Recorded Date,Start Date,End Date,Finished,condition,"In which forms of dance have you been formally trained?
+We define ""formal training"" as taking an official class with a teacher on a regular basis, or intensive personal experience. - Selected Choice","In which martial arts have you been formally trained?
+
+We define ""formal training"" as taking an official class with a teacher on a regular basis, or intensive personal experience. - Selected Choice","In which outdoor activities have you been formally trained?
+We define ""formal training"" as taking an official class with a teacher on a regular basis, or intensive personal experience. - Selected Choice","In which sports have you been formally trained?
+
+We define ""formal training"" as taking an official class with a teacher on a regular basis, or intensive personal experience. - Selected Choice"
+"{""ImportId"":""_recordId""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""finished""}","{""ImportId"":""condition""}","{""ImportId"":""QID19""}","{""ImportId"":""QID21""}","{""ImportId"":""QID25""}","{""ImportId"":""QID23""}"
+R_3g1TPcfJjkHUHxD,2020-11-11 16:21:31,2020-11-11 15:51:43,2020-11-11 16:21:31,1,action,2,"4,14",1,12
+R_3DbaNhhBNLLYEWM,2020-11-13 15:19:13,2020-11-13 11:01:46,2020-11-13 11:19:09,0,control,,,,
+R_1g2zd7zZuVlr0Dq,2020-11-19 16:35:28,2020-11-19 15:46:14,2020-11-19 16:35:28,1,stationary,1,1,1,10
+R_1pldJdcEsu7L2J0,2020-11-21 12:41:43,2020-11-21 12:17:32,2020-11-21 12:41:43,1,action,1,1,1,21
+R_3Hp2ipKsSiBvcoa,2020-11-23 20:35:34,2020-11-23 20:09:07,2020-11-23 20:35:33,1,stationary,1,1,1,"2,3,14,21"
+R_1omYuTMtnUnuTaq,2020-12-06 18:14:14,2020-12-06 13:55:13,2020-12-06 14:14:09,0,control,,,,
+R_2CWDqbCF4i98RT1,2020-12-07 14:23:21,2020-12-07 13:57:32,2020-12-07 14:23:21,1,stationary,3,1,1,"22,25"
+R_21HZDFVEAo8wjmQ,2020-12-11 09:36:18,2020-12-11 09:12:05,2020-12-11 09:36:17,1,control,1,17,1,20
+R_1r8q2WcV20ldRRJ,2020-12-12 20:38:26,2020-12-12 20:11:09,2020-12-12 20:38:26,1,action,1,1,"3,4",20
+R_3PRL47a08LkcgCX,2020-12-12 21:50:37,2020-12-12 21:12:39,2020-12-12 21:50:37,1,control,1,1,1,"12,21"
+R_2CleyaFI8j68tvi,2020-12-14 21:33:13,2020-12-14 21:06:30,2020-12-14 21:33:12,1,action,"2,16",1,1,"12,17,20"
+R_2QSQMLCoqAbJ4Uy,2020-12-19 12:00:09,2020-12-19 11:30:55,2020-12-19 12:00:09,1,stationary,1,17,1,"3,9,25"
+R_9XYPYREeHHivfvH,2020-12-19 16:56:08,2020-12-19 16:13:19,2020-12-19 16:56:07,1,action,"16,17",1,1,20
