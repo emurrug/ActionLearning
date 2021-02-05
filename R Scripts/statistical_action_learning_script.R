@@ -76,9 +76,16 @@ library (ggplot2) #visualizing data with graphs (we don't talk about the first "
 #The benefit to using file sharing accounts like GitHub or Dropbox is that everyone
 #has access to the most updated CSV of the data. In R, you are also able to import CSV files directly from github:
 
-myfile <- "https://raw.githubusercontent.com/emurrug/ActionLearning/master/Data/Pilot%20Data%20All.csv"
+myfile <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/SLA Data All.csv"
 #You can also import the file directly from your computer. To do this, you just put your path
 #directory instead of a URL. 
+#Changes to sheet:
+#Created "Survey" column to keep track of which survey each data point is from (possible inputs: RS-1, 2, 3; SLS-1, 2, 3).
+#Created "Statistical Organization" column (possible inputs: random = 0, statistical = 1).
+#Created "Correct_Mvt_Scores" columns. Each box is the sum of each participant's performance scores.
+#Changed condition column values to factor (possible inputs: action = 0, stationary = 1, control = 2).
+#Deleted all "Date" columns.
+#Renamed columns so that they were not specific to any of the six surveys.
 df <- read_csv(myfile)
 df <- df[-1,] #EM: removes the first row of the data (since this is a Qualtrics file w/ two headers)
 
