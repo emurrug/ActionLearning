@@ -131,12 +131,16 @@ df$variable <- as.numeric(df$variable) #to make it continuous
 
 df <- df %>% mutate_if(is.character,as.factor)
 
-#EM: if you want to take the likert scales and make these numeric (so you can get an average, for example)
+#EM: if you want to take the Likert scales and make these numeric (so you can get an average, for example)
 #you can select specific columns and make only these numeric
-num.columns <- c('T-1_Likert_1', 'T-2_Likert_1', 'T-3_Likert_1', 'T-4_Likert_1', 'UT-1_Likert_1', 'UT-2_Likert_1', 'UT-3_Likert_1', 'UT-4_Likert_1')
+num.columns <- c('T-1_Likert', 'T-2_Likert', 'T-3_Likert', 'T-4_Likert', 'UT-1_Likert', 'UT-2_Likert', 'UT-3_Likert', 'UT-4_Likert')
 num.columns <- c('T-1_Recognition', 'T-2_Recognition', 'T-3_Recognition', 'T-4_Recognition', 'UT-1_Recognition', 'UT-2_Recognition', 'UT-3_Recognition', 'UT-4_Recognition')
-num.columns <- c('T-1c_Likert_1', 'T-2c_Likert_1', 'T-3c_Likert_1', 'T-4c_Likert_1', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
+num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
+
+df$Finished <- as.factor(df$Finished)
+df$`Statistical Organization` <- as.factor(df$`Statistical Organization`)
+df$Condition <- as.factor(df$Condition)
 
 #always double check it looks good: 
 str(df)
@@ -299,13 +303,23 @@ summary(model2)
 # The asterisk here is testing for an interaction effect. If you only want to look at main effects without
 # the interaction, you should add a "+" instead. 
 
+#MC: ANOVA test that tests the interaction between statistical organization and action condition on performance.
+model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` * df$Condition)
+
+#MC: I got used summary(model_production) to get this output:
+#                                            Df Sum Sq Mean Sq F value Pr(>F)  
+#df$`Statistical Organization`               1   5.16   5.164   2.949 0.0909 .
+#df$Condition                                2   2.89   1.444   0.825 0.4431  
+#df$`Statistical Organization`:df$Condition  2   0.26   0.130   0.074 0.9285  
+#Residuals                                  62 108.57   1.751                 
+
+
 #The linear regression test: 
 model3 <- lm(df$LikertDV ~ df$actionIV * df$statisticalIV) #notice the similarity to the ANOVA. There's a theoretical reason for that!
 summary(model3)
 
-
 #Now that you have the basic format of each of the tests that you need, try it out with the demographic variables
-#and see if they predict any of the dependenct variables of interest.
+#and see if they predict any of the dependent variables of interest.
 
 
 #### GRAPHING ####
@@ -320,7 +334,12 @@ summary(model3)
 #here is another package that's based on ggplot and might help: 
 #https://finalfit.org/reference/or_plot.html
 
-
+#MC: used this template for making a bar graph with action conditions (x) and production scores (y)
+myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
+barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistical Organization`))
+barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical Organization`) +
+stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 
 #### SUMMARIZING RESULTS####
