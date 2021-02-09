@@ -87,7 +87,8 @@ myfile <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official D
 #Deleted all "Date" columns.
 #Renamed columns so that they were not specific to any of the six surveys.
 df <- read_csv(myfile)
-df <- df[-1,] #EM: removes the first row of the data (since this is a Qualtrics file w/ two headers)
+# df <- df[-1,] #EM: removes the first row of the data (since this is a Qualtrics file w/ two headers)
+#MC: I manually removed the second header row so this isn't needed.
 
 # "df" is a standard shorthand for "dataframe"
 
@@ -107,7 +108,7 @@ View(df)
 
 df <- na.omit(df) #EM: removes rows with NAs in them. 
 #If you want to remove them based on unfinished surveys (not NAs), I recommend this instead: 
-#df<-df[!(df$Finished=="0"),]
+df<-df[!(df$Finished=="0"),]
 
 
 #You remember NOIR? (Nominal, Ordinal, Interval, Ratio)
@@ -306,12 +307,26 @@ summary(model2)
 #MC: ANOVA test that tests the interaction between statistical organization and action condition on performance.
 model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` * df$Condition)
 
-#MC: I got used summary(model_production) to get this output:
-#                                            Df Sum Sq Mean Sq F value Pr(>F)  
-#df$`Statistical Organization`               1   5.16   5.164   2.949 0.0909 .
-#df$Condition                                2   2.89   1.444   0.825 0.4431  
-#df$`Statistical Organization`:df$Condition  2   0.26   0.130   0.074 0.9285  
-#Residuals                                  62 108.57   1.751                 
+#MC: I used summary(model_production) to get this output:
+                                            Df Sum Sq Mean Sq F value Pr(>F)  
+df$`Statistical Organization`               1   5.16   5.164   2.949 0.0909 .
+df$Condition                                2   2.89   1.444   0.825 0.4431  
+df$`Statistical Organization`:df$Condition  2   0.26   0.130   0.074 0.9285  
+Residuals                                  62 108.57   1.751                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+#MC: ANOVA test that tests the interaction between statistical organization and action condition on comprehension.
+model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$`Statistical Organization` * df$Condition)
+
+#MC: I used summary(model_comprehension) to get this output (looks significant!):
+                                            Df Sum Sq Mean Sq F value  Pr(>F)   
+df$`Statistical Organization`               1  18.37  18.366   9.451 0.00312 **
+df$Condition                                2  14.61   7.306   3.760 0.02868 * 
+df$`Statistical Organization`:df$Condition  2   5.81   2.906   1.495 0.23204   
+Residuals                                  63 122.43   1.943                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
 #The linear regression test: 
@@ -340,6 +355,12 @@ barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistic
 barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
 labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical Organization`) +
 stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
+
+#MC: here's the same bar graph with action conditions (x) and comprehension scores (y)
+barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = `Statistical Organization`))
+barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$`Statistical Organization`) +
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 
 #### SUMMARIZING RESULTS####
