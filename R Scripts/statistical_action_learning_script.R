@@ -306,8 +306,7 @@ summary(model2)
 
 #MC: ANOVA test that tests the interaction between statistical organization and action condition on performance.
 model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` * df$Condition)
-
-#MC: I used summary(model_production) to get this output:
+summary(model_production)
                                             Df Sum Sq Mean Sq F value Pr(>F)  
 df$`Statistical Organization`               1   5.16   5.164   2.949 0.0909 .
 df$Condition                                2   2.89   1.444   0.825 0.4431  
@@ -316,15 +315,37 @@ Residuals                                  62 108.57   1.751
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+
+#MC: ANOVA test with + (instead of *).
+model_production2 <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` + df$Condition)
+summary(model_production2)
+                              Df Sum Sq Mean Sq F value Pr(>F)  
+df$`Statistical Organization`  1   5.27   5.266   3.144 0.0809 .
+df$Condition                   2   2.84   1.422   0.849 0.4325  
+Residuals                     65 108.88   1.675                 
+---
+  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
 #MC: ANOVA test that tests the interaction between statistical organization and action condition on comprehension.
 model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$`Statistical Organization` * df$Condition)
-
-#MC: I used summary(model_comprehension) to get this output (looks significant!):
+summary(model_comprehension)
                                             Df Sum Sq Mean Sq F value  Pr(>F)   
 df$`Statistical Organization`               1  18.37  18.366   9.451 0.00312 **
 df$Condition                                2  14.61   7.306   3.760 0.02868 * 
 df$`Statistical Organization`:df$Condition  2   5.81   2.906   1.495 0.23204   
 Residuals                                  63 122.43   1.943                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+#MC: ANOVA test with + (instead of *).
+model_comprehension2 <- aov(df$Correct_Trigram_Scores ~ df$`Statistical Organization` + df$Condition)
+summary(model_comprehension2)
+                              Df Sum Sq Mean Sq F value Pr(>F)   
+df$`Statistical Organization`  1  18.37  18.366   9.309 0.0033 **
+df$Condition                   2  14.61   7.306   3.703 0.0300 * 
+Residuals                     65 128.24   1.973                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
