@@ -81,7 +81,7 @@ myfile <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official D
 #directory instead of a URL. 
 #Changes to sheet:
 #Created "Survey" column to keep track of which survey each data point is from (possible inputs: RS-1, 2, 3; SLS-1, 2, 3).
-#Created "Statistical Organization" column (possible inputs: random = 0, statistical = 1).
+#Created "Statistical_Organization" column (possible inputs: random = 0, statistical = 1).
 #Created "Correct_Mvt_Scores" columns. Each box is the sum of each participant's performance scores.
 #Changed condition column values to factor (possible inputs: action = 0, stationary = 1, control = 2).
 #Deleted all "Date" columns.
@@ -140,8 +140,9 @@ num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Co
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 df$Finished <- as.factor(df$Finished)
-df$`Statistical Organization` <- as.factor(df$`Statistical Organization`)
+df$`Statistical_Organization` <- as.factor(df$`Statistical_Organization`)
 df$Condition <- as.factor(df$Condition)
+df$Statistical_Organization <- df$`Statistical Organization`
 
 #always double check it looks good: 
 str(df)
@@ -304,51 +305,55 @@ summary(model2)
 # The asterisk here is testing for an interaction effect. If you only want to look at main effects without
 # the interaction, you should add a "+" instead. 
 
-#MC: ANOVA test that tests the interaction between statistical organization and action condition on performance.
-model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` * df$Condition)
+#MC: ANOVA test that tests the interaction between Statistical_Organization and action condition on performance.
+model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical_Organization` * df$Condition)
 summary(model_production)
                                             Df Sum Sq Mean Sq F value Pr(>F)  
-df$`Statistical Organization`               1   5.16   5.164   2.949 0.0909 .
+df$`Statistical_Organization`               1   5.16   5.164   2.949 0.0909 .
 df$Condition                                2   2.89   1.444   0.825 0.4431  
-df$`Statistical Organization`:df$Condition  2   0.26   0.130   0.074 0.9285  
+df$`Statistical_Organization`:df$Condition  2   0.26   0.130   0.074 0.9285  
 Residuals                                  62 108.57   1.751                 
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
 #MC: ANOVA test with + (instead of *).
-model_production2 <- aov(df$Correct_Mvt_Scores ~ df$`Statistical Organization` + df$Condition)
+model_production2 <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization + df$Condition)
 summary(model_production2)
                               Df Sum Sq Mean Sq F value Pr(>F)  
-df$`Statistical Organization`  1   5.27   5.266   3.144 0.0809 .
+df$`Statistical_Organization`  1   5.27   5.266   3.144 0.0809 .
 df$Condition                   2   2.84   1.422   0.849 0.4325  
 Residuals                     65 108.88   1.675                 
 ---
   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
-#MC: ANOVA test that tests the interaction between statistical organization and action condition on comprehension.
-model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$`Statistical Organization` * df$Condition)
+#MC: ANOVA test that tests the interaction between Statistical_Organization and action condition on comprehension.
+model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization * df$Condition)
 summary(model_comprehension)
                                             Df Sum Sq Mean Sq F value  Pr(>F)   
-df$`Statistical Organization`               1  18.37  18.366   9.451 0.00312 **
+df$`Statistical_Organization`               1  18.37  18.366   9.451 0.00312 **
 df$Condition                                2  14.61   7.306   3.760 0.02868 * 
-df$`Statistical Organization`:df$Condition  2   5.81   2.906   1.495 0.23204   
+df$`Statistical_Organization`:df$Condition  2   5.81   2.906   1.495 0.23204   
 Residuals                                  63 122.43   1.943                   
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 
 #MC: ANOVA test with + (instead of *).
-model_comprehension2 <- aov(df$Correct_Trigram_Scores ~ df$`Statistical Organization` + df$Condition)
+model_comprehension2 <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization + df$Condition)
 summary(model_comprehension2)
                               Df Sum Sq Mean Sq F value Pr(>F)   
-df$`Statistical Organization`  1  18.37  18.366   9.309 0.0033 **
+df$`Statistical_Organization`  1  18.37  18.366   9.309 0.0033 **
 df$Condition                   2  14.61   7.306   3.703 0.0300 * 
 Residuals                     65 128.24   1.973                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+
+#Post hoc analysis for comprehension scores (rename this model):
+model_comprehension_ph.emm.s <- emmeans(model_comprehension2, "Condition")
+pairs(model_comprehensions_ph.emm.s)
 
 #The linear regression test: 
 model3 <- lm(df$LikertDV ~ df$actionIV * df$statisticalIV) #notice the similarity to the ANOVA. There's a theoretical reason for that!
@@ -372,15 +377,15 @@ summary(model3)
 
 #MC: used this template for making a bar graph with action conditions (x) and production scores (y)
 myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
-barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistical Organization`))
+barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistical_Organization`))
 barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical Organization`) +
+labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical_Organization`) +
 stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 #MC: here's the same bar graph with action conditions (x) and comprehension scores (y)
-barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = `Statistical Organization`))
+barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = `Statistical_Organization`))
 barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$`Statistical Organization`) +
+  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$`Statistical_Organization`) +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 
