@@ -2,7 +2,7 @@
 # I hope to consolidate the most relevant code for Likert scores here, and will probably be doing cleaning and
 # editing in this file from now on. (30 March 2021)
 
-# The first three sections are exactly the same as sla_script_tests.R.
+# The first two sections are exactly the same as sla_script_tests.R.
 
 #### LOADING PACKAGES ####
 library(readr)   #reading CSV's
@@ -15,7 +15,7 @@ library(magrittr) #not sure if I need this one?
 
 #### IMPORTING & LABELLING DATA ####
 # Import the file directly from Github:
-myfile <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/SLA Data All.csv"
+myfile <- "~/Documents/Most/SLA_Study/GitHub/ActionLearning/Data/SLA_Official/Concatenated/SLA_Data_All.csv"
 
 # Create dataframe from file:
 df <- read_csv(myfile)
@@ -47,9 +47,8 @@ num.columns <- c('T-1_Recognition', 'T-2_Recognition', 'T-3_Recognition', 'T-4_R
 num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
-# Change column name so it doesn't have spaces (not sure which one it is...but it creates a new column):
-df$`Statistical_Organization` <- as.factor(df$`Statistical_Organization`)
-df$Statistical_Organization <- df$`Statistical Organization`
+# Then convert Statistical_Organization to a factor:
+df$Statistical_Organization <- as.factor(df$Statistical_Organization)
 
 # Check that it looks good:
 str(df)
@@ -71,8 +70,14 @@ ggplot(df, aes(x = df$variable, na.rm = TRUE)) + #specifies your x,y of interest
 # How are the variables correlated with one another? Haven't used this one yet, but included it just in case.
 > pairs(~var1+var2+var3+var4+varetc,data=df, + main="Simple Scatterplot Matrix")
 
-# To visualize the distribution of confidence, I'll plot MeanLikert on a histogram.
-ggplot(df, aes(x = `MeanLikert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+# To visualize the distribution of confidence, I'll plot Total_Likert on a histogram.
+ggplot(df, aes(x = `Total_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
+# Histogram of the distribution of confidence for familiar trigrams, comprehension:
+ggplot(df, aes(x = `Familiar_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
+# Histogram of the distribution of confidence for unfamiliar trigrams, comprehension:
+ggplot(df, aes(x = `Unfamiliar_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
 
 # Do some people always pick the same answer?
 # The analysis above mostly answers that question, I just have to calculate means for Recognition questions, too.

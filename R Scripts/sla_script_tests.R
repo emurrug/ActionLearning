@@ -2,7 +2,7 @@
 # I hope to consolidate the most relevant comprehension and productions tests code here, and will probably be
 # doing cleaning and editing in this file from now on. (4 March 2021)
 
-# The first three sections are exactly the same as sla_script_likert.R.
+# The first two sections are exactly the same as sla_script_likert.R.
 
 #### LOADING PACKAGES ####
 library(readr)   #reading CSV's
@@ -47,9 +47,8 @@ num.columns <- c('T-1_Recognition', 'T-2_Recognition', 'T-3_Recognition', 'T-4_R
 num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
-# Change column name so it doesn't have spaces (not sure which one it is...but it creates a new column):
-df$`Statistical_Organization` <- as.factor(df$`Statistical_Organization`)
-df$Statistical_Organization <- df$`Statistical Organization`
+# Then convert Statistical_Organization to a factor:
+df$Statistical_Organization <- as.factor(df$Statistical_Organization)
 
 # Check that it looks good:
 str(df)
