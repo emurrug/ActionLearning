@@ -70,7 +70,7 @@ ggplot(df, aes(x = df$variable, na.rm = TRUE)) + #specifies your x,y of interest
 # How are the variables correlated with one another? Haven't used this one yet, but included it just in case.
 > pairs(~var1+var2+var3+var4+varetc,data=df, + main="Simple Scatterplot Matrix")
 
-# To visualize the distribution of confidence, I'll plot Total_Likert on a histogram.
+# Histogram of the distribution of summed confidence scores:
 ggplot(df, aes(x = `Total_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
 
 # Histogram of the distribution of confidence for familiar trigrams, comprehension:
@@ -82,6 +82,21 @@ ggplot(df, aes(x = `Unfamiliar_Likert`, na.rm = TRUE)) + geom_bar(color = "black
 # Do some people always pick the same answer?
 # The analysis above mostly answers that question, I just have to calculate means for Recognition questions, too.
 # ggplot(df, aes(x = `RECOGNITIONMEAN`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+
+
+# In which of the six conditions were the participants the most confident?
+
+# Were participants more confident in the statistical learning vs. random condition?
+# Look for effects in both comprehension and production questions.
+SL = 1
+R = 0
+# Game plan: find a way to differentiate between SL and R, then do both histograms and correlative measures.
+
+# Were participants more confident in the action vs. stationary (vs. control) condition?
+# Look for effects in both comprehension and production questions.
+# Pay special attention to how the control condition compares to the action condition. Are they significantly different?
+  
+
 
 #### ANOVA TESTS ####
 # Formula for the ANOVA test: 
