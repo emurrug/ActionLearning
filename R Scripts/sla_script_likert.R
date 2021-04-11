@@ -71,13 +71,16 @@ ggplot(df, aes(x = df$variable, na.rm = TRUE)) + #specifies your x,y of interest
 > pairs(~var1+var2+var3+var4+varetc,data=df, + main="Simple Scatterplot Matrix")
 
 # Histogram of the distribution of summed confidence scores:
-ggplot(df, aes(x = `Total_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+confidence_hist <- ggplot(df, aes(x = `Total_Likert`, na.rm = TRUE))
+confidence_hist + geom_bar(color = "black", fill = "white", stat = "count")
 
 # Histogram of the distribution of confidence for familiar trigrams, comprehension:
-ggplot(df, aes(x = `Familiar_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+confidence_f_hist <- ggplot(df, aes(x = `Familiar_Likert`, na.rm = TRUE))
+confidence_f_hist + geom_bar(color = "black", fill = "white", stat = "count")
 
 # Histogram of the distribution of confidence for unfamiliar trigrams, comprehension:
-ggplot(df, aes(x = `Unfamiliar_Likert`, na.rm = TRUE)) + geom_bar(color = "black", fill = "white", stat = "count")
+confidence_u_hist <- ggplot(df, aes(x = `Unfamiliar_Likert`, na.rm = TRUE))
+confidence_u_hist + geom_bar(color = "black", fill = "white", stat = "count")
 
 # Do some people always pick the same answer?
 # The analysis above mostly answers that question, I just have to calculate means for Recognition questions, too.
@@ -86,10 +89,18 @@ ggplot(df, aes(x = `Unfamiliar_Likert`, na.rm = TRUE)) + geom_bar(color = "black
 
 # In which of the six conditions were the participants the most confident?
 
-# Were participants more confident in the statistical learning vs. random condition?
+# Were participants more confident in the statistical learning vs. random condition? SL = 1, R = 0
 # Look for effects in both comprehension and production questions.
-SL = 1
-R = 0
+
+# Histogram of the distribution of summed confidence scores, color-coded (SL vs. R):
+ggplot(df, aes(Total_Likert, fill = `Statistical_Organization`)) + geom_histogram(binwidth = 1, position = dodge)
+
+
+# Bar graph showing the averages of the total Likert scores for R vs. SL:
+confidence_condition_bar <- ggplot(df, aes(`Statistical_Organization`, `Total_Likert`))
+confidence_condition_bar + stat_summary(fun = mean, geom = "bar", fill = "White", colour = "Black") + 
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", colour = "Red")
+
 # Game plan: find a way to differentiate between SL and R, then do both histograms and correlative measures.
 
 # Were participants more confident in the action vs. stationary (vs. control) condition?
@@ -106,22 +117,41 @@ summary(model)
 # The asterisk here is testing for an interaction effect. If you only want to look at main effects without
 # the interaction, you should add a "+" instead. 
 
-# ANOVA test for the interaction between Statistical_Organization and action condition on performance.
-model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical_Organization` * df$Condition)
-summary(model_production)
+# Is there a correlation between confidence and correctness?
+# That is, were people more confident when they were correct?
 
-# Same ANOVA test with + (instead of *).
-model_production2 <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization + df$Condition)
+# ANOVA test for whether confidence predicts correctness on production.
+# THIS IS A BETTER TEST BECAUSE CORRECTNESS IS DOING ALL THE PREDICTIVE WORK (AS EVIDENCED BY THE TEST BELOW)
+model_productionL <- aov(df$Mvt_Likert ~ df$Correct_Mvt_Scores)
+summary(model_productionL)
+
+# ANOVA test for the interaction between correctness and condition to predict confidence:
+model_productionLCC <- aov(df$Mvt_Likert ~ df$Correct_Mvt_Scores * df$Condition)
+summary(model_productionLCC)
+
+# Same ANOVA test with + (instead of *). HAVEN'T UPDATED YET -- WAITING TO SEE IF THE ABOVE CODE IS RIGHT
+model_productionL2 <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization + df$Condition)
 summary(model_production2)
 
 
-# ANOVA test for the interaction between Statistical_Organization and action condition on comprehension.
-model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization * df$Condition)
-summary(model_comprehension)
+# ANOVA test for whether confidence predicts correctness on comprehension.
+model_comprehensionL <- aov(df$Total_Likert ~ df$Correct_Trigram_Scores)
+summary(model_comprehensionL)
 
-# Same ANOVA test with + (instead of *).
-model_comprehension2 <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization + df$Condition)
+# Same ANOVA test with + (instead of *). HAVEN'T UPDATED YET -- WAITING TO SEE IF THE ABOVE CODE IS RIGHT
+model_comprehensionL2 <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization + df$Condition)
 summary(model_comprehension2)
+
+
+# Scatterplot for comprehension and confidence -- HAVEN'T UPDATED YET FROM EXPERIENCE CODE
+# experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Trigram_Scores))
+# experience_comprehension + stat_summary(geom = "point")
+
+
+# This is interesting by I haven't figured out wtf this means...
+model_productionLi <- aov(df$Mvt_Likert ~ df$Statistical_Organization * df$Condition)
+summary(model_productionLi)
+
 
 #### POST HOC ANALYSES ####
 # Post hoc analysis for comprehension scores (RENAME THIS MODEL):
