@@ -1,0 +1,48 @@
+ResponseId,RecordedDate,StartDate,EndDate,Finished,condition,SLS-3_T-1_Recognitio,SLS-3_T-1_Likert_1,SLS-3_T-2_Recognitio,SLS-3_T-2_Likert_1,SLS-3_T-3_Recognitio,SLS-3_T-3_Likert_1,SLS-3_T-4_Recognitio,SLS-3_T-4_Likert_1,SLS-3_UT-1Recognitio,SLS-3_UT-1_Likert_1,SLS-3_UT-2Recognitio,SLS-3_UT-2_Likert_1,SLS-3_UT-3Recognitio,SLS-3_UT-3_Likert_1,SLS-3_UT-4Recognitio,SLS-3_UT-4_Likert_1,SLS-3_T-1c_Likert_1,CorrectMvt_SLS-3_T-1,SLS-3_T-2c_Likert_1,CorrectMvt_SLS-3_T-2,SLS-3_T-3c_Likert_1,CorrectMvt_SLS-3_T-3,SLS-3_T-4c_Likert_1,CorrectMvt_SLS-3_T-4
+R_2ZBtzm0XhlTomfi,17/11/2020 18:55,17/11/2020 18:08,17/11/2020 18:55,1,control,1,5,2,7,2,6,2,6,1,7,1,3,2,5,1,5,6,3,6,1,3,2,5,1
+R_s5cQxlD0Gsk77X3,19/11/2020 23:07,19/11/2020 22:38,19/11/2020 23:07,1,stationary,1,5,2,3,1,6,1,4,2,6,1,3,2,6,2,5,6,1,5,3,3,2,3,2
+R_z20MsvOUuDVL82t,30/11/2020 17:23,30/11/2020 16:56,30/11/2020 17:23,1,action,1,7,2,3,1,4,2,5,2,3,2,4,1,5,2,5,5,2,3,2,3,2,3,3
+R_9yiqiVBucOzthpn,01/12/2020 15:18,01/12/2020 14:39,01/12/2020 15:18,1,stationary,2,3,2,5,2,4,1,4,2,2,1,3,1,5,2,3,3,1,4,1,5,3,2,2
+R_vYs6JfFPEMZX3kl,03/12/2020 14:36,03/12/2020 10:30,03/12/2020 10:36,0,action,,,,,,,,,,,,,,,,,,,,,,,,
+R_3NIJpziW517QCZL,03/12/2020 11:12,03/12/2020 10:41,03/12/2020 11:12,1,action,1,5,1,1,1,2,1,3,1,3,2,3,2,2,2,4,4,1,4,1,4,1,4,1
+R_1okg7WsO2yXS0S8,08/12/2020 0:06,07/12/2020 23:39,08/12/2020 0:06,1,stationary,2,5,2,4,2,4,1,4,2,4,2,4,2,4,1,4,4,1,4,2,4,1,4,1
+R_p3n0HMAnlWVmkbn,10/12/2020 17:04,10/12/2020 16:41,10/12/2020 17:04,1,control,1,6,2,5,1,4,2,3,2,1,2,6,2,1,2,3,6,1,5,1,3,1,5,1
+R_30ktXzc2zPOw4cC,11/12/2020 17:55,11/12/2020 17:29,11/12/2020 17:55,1,action,2,2,2,2,1,2,1,2,1,2,2,1,2,2,2,2,2,1,3,2,3,1,4,1
+R_2E0JLBoRCQIfKLU,13/12/2020 19:20,13/12/2020 18:49,13/12/2020 19:20,1,stationary,2,4,2,5,1,4,1,4,2,4,2,5,2,4,2,5,4,2,4,2,5,1,5,1
+R_3r0UScEoISswx1u,15/12/2020 12:17,15/12/2020 11:46,15/12/2020 12:17,1,control,1,7,1,4,2,2,2,4,2,6,2,3,1,3,1,6,1,2,3,1,4,2,5,1
+R_1pGvCqnx5M2GLyT,16/12/2020 9:44,16/12/2020 9:18,16/12/2020 9:44,1,action,1,3,1,3,2,1,1,2,2,1,2,1,2,1,1,3,1,1,1,2,1,2,7,1
+R_3kjiJ0cYAtlKVsd,16/12/2020 16:20,16/12/2020 15:53,16/12/2020 16:20,1,stationary,1,1,1,1,2,1,2,1,2,4,1,1,2,1,1,1,7,1,5,3,2,2,5,2
+R_3il2hAL3YJMRHuj,16/12/2020 21:52,16/12/2020 21:26,16/12/2020 21:52,1,control,2,2,2,7,2,4,1,5,1,3,2,5,2,6,1,3,3,2,3,1,5,1,5,1
+R_Y0lC2bURNKQ3rsl,17/12/2020 9:51,17/12/2020 9:25,17/12/2020 9:51,1,action,1,3,2,3,1,5,1,5,2,6,2,6,2,6,1,3,6,1,5,2,6,1,3,3
+R_2dFMY5BGCSKCEQ3,24/02/2021 7:37,24/02/2021 7:03,24/02/2021 7:36,1,control,1,4,1,2,1,6,1,6,2,5,2,3,1,6,1,5,5,2,3,2,5,2,4,2
+R_1E5Li6MeMODL34o,24/02/2021 15:15,24/02/2021 14:46,24/02/2021 15:15,1,stationary,2,4,2,5,1,2,2,2,1,3,1,3,1,2,2,6,5,1,3,2,3,3,2,2
+R_25S29Kh6VpaLFqw,25/02/2021 16:30,25/02/2021 11:46,25/02/2021 12:30,0,stationary,2,3,1,2,1,5,1,6,2,1,2,4,2,3,2,2,3,1,1,2,3,1,1,1
+R_3kcfIwWe0K5Ohab,25/02/2021 16:31,25/02/2021 12:30,25/02/2021 12:31,0,control,,,,,,,,,,,,,,,,,,,,,,,,
+R_1K9cVUEdzyFSf7e,25/02/2021 16:35,25/02/2021 12:31,25/02/2021 12:35,0,action,,,,,,,,,,,,,,,,,,,,,,,,
+R_3oZSjHLM9sTWMCS,27/02/2021 23:40,27/02/2021 23:08,27/02/2021 23:40,1,action,2,4,2,3,2,5,2,5,2,1,2,5,1,4,1,4,3,2,4,2,5,2,6,1
+R_2gaGSLsPzgCfoRj,28/02/2021 21:07,28/02/2021 20:31,28/02/2021 21:07,1,stationary,2,2,2,2,2,2,1,3,1,2,1,2,1,2,1,3,3,2,3,1,3,2,2,1
+R_cSI0E1AtixLPrwd,01/03/2021 20:00,01/03/2021 16:00,01/03/2021 16:00,0,control,,,,,,,,,,,,,,,,,,,,,,,,
+R_27JBGeyWlu3EFI3,06/03/2021 17:40,06/03/2021 17:17,06/03/2021 17:40,1,control,2,4,2,5,2,5,2,5,1,5,2,6,2,5,2,5,4,1,4,1,4,2,4,1
+R_PtTsoJVPOfTW2rv,09/03/2021 11:57,09/03/2021 7:40,09/03/2021 7:57,0,stationary,1,5,,,,,,,1,6,,,1,3,,,,,,,,,,
+R_1Kwq1MUhgnoFENe,09/03/2021 8:24,09/03/2021 7:57,09/03/2021 8:24,1,action,1,5,2,4,2,3,2,3,2,3,1,5,1,5,2,5,5,1,3,2,3,1,6,1
+R_1riYiWF6k8RQCBu,12/03/2021 2:53,12/03/2021 2:22,12/03/2021 2:53,1,action,1,6,1,4,1,5,1,7,2,5,2,5,1,6,2,7,7,1,7,2,6,1,6,1
+R_2Ytzt4geaOLSqOm,12/03/2021 9:31,12/03/2021 9:06,12/03/2021 9:31,1,control,2,5,1,6,1,3,1,3,1,3,2,3,2,5,1,4,1,2,3,1,5,1,3,3
+R_2y4qyblvZ1LxqjJ,12/03/2021 9:37,12/03/2021 9:00,12/03/2021 9:37,1,stationary,1,2,1,5,1,5,1,4,2,2,2,1,2,1,2,1,6,1,5,3,7,1,2,2
+R_6QEugdiR7pfRbR7,16/03/2021 8:20,16/03/2021 7:53,16/03/2021 8:20,1,stationary,1,6,1,7,1,7,1,7,2,7,2,6,2,4,1,3,4,1,6,1,7,1,7,1
+R_3qVaJqFhHEw1Q8X,20/03/2021 14:29,20/03/2021 10:28,20/03/2021 10:29,0,action,,,,,,,,,,,,,,,,,,,,,,,,
+R_1EYuvfi1bmW6kQW,22/03/2021 1:22,22/03/2021 0:48,22/03/2021 1:22,1,control,2,3,2,3,1,3,2,3,2,3,1,3,2,3,1,3,4,2,2,3,3,1,2,1
+R_1ohG4eAV1OPEjaQ,03/04/2021 10:58,03/04/2021 8:40,03/04/2021 10:58,1,action,1,2,2,2,2,5,1,7,1,6,1,4,2,3,2,2,5,1,3,1,5,1,5,3
+"{""ImportId"":""_recordId""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""finished""}","{""ImportId"":""condition""}","{""ImportId"":""QID174""}","{""ImportId"":""QID175_1""}","{""ImportId"":""QID177""}","{""ImportId"":""QID401_1""}","{""ImportId"":""QID180""}","{""ImportId"":""QID402_1""}","{""ImportId"":""QID183""}","{""ImportId"":""QID403_1""}","{""ImportId"":""QID186""}","{""ImportId"":""QID404_1""}","{""ImportId"":""QID189""}","{""ImportId"":""QID405_1""}","{""ImportId"":""QID192""}","{""ImportId"":""QID406_1""}","{""ImportId"":""QID195""}","{""ImportId"":""QID407_1""}","{""ImportId"":""QID409_1""}","{""ImportId"":""QID306""}","{""ImportId"":""QID410_1""}","{""ImportId"":""QID499""}","{""ImportId"":""QID411_1""}","{""ImportId"":""QID500""}","{""ImportId"":""QID412_1""}","{""ImportId"":""QID501""}"
+Response ID,Recorded Date,Start Date,End Date,Finished,condition,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,"Have you seen these movements, in that order, before?",How confident are you in your response to the previous question?,How confident are you that your movement was the correct one?,"Did you perform the correct movement?
+If so, select Y.
+If not, select N. Please describe which movement you performed instead of the correct one.
+If you performed a partially correct movement, such as performing the correct motion but on the opposite side, select P. Please explain how your movement was partially correct by comparing your movement to the one in the video. - Selected Choice",How confident are you that your movement was the correct one?,"Did you perform the correct movement?
+If so, select Y.
+If not, select N. Please describe which movement you performed instead of the correct one.
+If you performed a partially correct movement, such as performing the correct motion but on the opposite side, select P. Please explain how your movement was partially correct by comparing your movement to the one in the video. - Selected Choice",How confident are you that your movement was the correct one?,"Did you perform the correct movement?
+If so, select Y.
+If not, select N. Please describe which movement you performed instead of the correct one.
+If you performed a partially correct movement, such as performing the correct motion but on the opposite side, select P. Please explain how your movement was partially correct by comparing your movement to the one in the video. - Selected Choice",How confident are you that your movement was the correct one?,"Did you perform the correct movement?
+If so, select Y.
+If not, select N. Please describe which movement you performed instead of the correct one.
+If you performed a partially correct movement, such as performing the correct motion but on the opposite side, select P. Please explain how your movement was partially correct by comparing your movement to the one in the video. - Selected Choice"

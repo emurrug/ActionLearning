@@ -1,4 +1,5 @@
 ResponseId,Finished,Survey,Statistical_Organization,Condition,T-1_Recognition,T-1_Likert,T-2_Recognition,T-2_Likert,T-3_Recognition,T-3_Likert,T-4_Recognition,T-4_Likert,UT-1_Recognition,UT-1_Likert,UT-2_Recognition,UT-2_Likert,UT-3_Recognition,UT-3_Likert,UT-4_Recognition,UT-4_Likert,Familiar_Scores,Unfamiliar_Scores,Correct_Trigram_Scores,Familiar_Likert,Unfamiliar_Likert,Total_Likert,T-1c_Likert,Correct_Mvt_T-1,T-2c_Likert,Correct_Mvt_T-2,T-3c_Likert,Correct_Mvt_T-3,T-4c_Likert,Correct_Mvt_T-4,Correct_Mvt_Scores,Mvt_Likert
+R_3pr9FErKrYp8DJW,1,RS-1,0,2,2,5,1,4,1,4,1,4,1,4,2,4,1,3,2,2,5,6,11,17,13,30,3,2,3,1,2,2,2,1,6,10
 R_3g1TPcfJjkHUHxD,1,RS-1,0,0,0,6,0,2,0,5,0,3,0,4,0,3,0,4,1,5,0,1,1,16,16,32,3,1,3,1,3,1,3,2,5,12
 R_1pldJdcEsu7L2J0,1,RS-1,0,0,0,2,1,1,0,2,1,2,1,1,0,3,1,2,1,2,2,3,5,7,8,15,2,1,3,2,3,2,1,2,7,9
 R_1r8q2WcV20ldRRJ,1,RS-1,0,0,0,2,1,2,1,5,1,2,1,5,1,6,0,3,1,5,3,3,6,11,19,30,3,0,3,1,2,1,3,1,3,11
@@ -150,6 +151,7 @@ R_2y4qyblvZ1LxqjJ,1,SLS-3,1,1,1,2,1,5,1,5,1,4,1,2,1,1,1,1,1,1,4,4,8,16,5,21,6,1,
 R_6QEugdiR7pfRbR7,1,SLS-3,1,1,1,6,1,7,1,7,1,7,1,7,1,6,1,4,0,3,4,3,7,27,20,47,4,1,6,1,7,1,7,1,4,24
 R_1EYuvfi1bmW6kQW,1,SLS-3,1,2,0,3,0,3,1,3,0,3,1,3,0,3,1,3,0,3,1,2,3,12,12,24,4,2,2,3,3,1,2,1,7,11
   ,1,SLS-3,1,0,1,2,0,2,0,5,1,7,0,6,0,4,1,3,1,2,2,2,4,16,15,31,5,1,3,1,5,1,5,3,6,18
+R_yF2aFoUY5DqcvKN,1,SLS-3,1,2,2,3,1,2,1,5,1,3,2,5,1,5,1,2,2,6,5,6,11,13,18,31,7,1,3,2,1,2,5,1,6,16
 R_3DbaNhhBNLLYEWM,0,RS-1,0,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 R_1omYuTMtnUnuTaq,0,RS-1,0,2,0,2,0,1,1,2,1,2,1,2,1,2,0,2,1,2,2,3,5,7,8,15,,,,,1,,,,,1
 R_1i86IcODbMOl1la,0,RS-2,0,2,1,5,0,6,0,2,0,5,1,3,0,2,1,5,1,3,1,3,4,18,13,31,2,1,1,1,2,1,,,3,5

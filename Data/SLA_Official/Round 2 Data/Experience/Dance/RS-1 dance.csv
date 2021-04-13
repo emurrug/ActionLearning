@@ -1,0 +1,277 @@
+ResponseId,RecordedDate,StartDate,EndDate,Finished,condition,Dance_Forms,Dance_Details_1_1,Dance_Details_1_2,Dance_Details_1_4,Dance_Details_2_1,Dance_Details_2_2,Dance_Details_2_4,Dance_Details_3_1,Dance_Details_3_2,Dance_Details_3_4,Dance_Details_4_1,Dance_Details_4_2,Dance_Details_4_4,Dance_Details_5_1,Dance_Details_5_2,Dance_Details_5_4,Dance_Details_6_1,Dance_Details_6_2,Dance_Details_6_4,Dance_Details_7_1,Dance_Details_7_2,Dance_Details_7_4,Dance_Details_8_1,Dance_Details_8_2,Dance_Details_8_4,Dance_Details_9_1,Dance_Details_9_2,Dance_Details_9_4,Dance_Details_10_1,Dance_Details_10_2,Dance_Details_10_4,Dance_Details_11_1,Dance_Details_11_2,Dance_Details_11_4,Dance_Details_12_1,Dance_Details_12_2,Dance_Details_12_4,Dance_Details_13_1,Dance_Details_13_2,Dance_Details_13_4,Dance_Details_14_1,Dance_Details_14_2,Dance_Details_14_4,Dance_Details_15_1,Dance_Details_15_2,Dance_Details_15_4,Dance_Details_16_1,Dance_Details_16_2,Dance_Details_16_4,Dance_Details_17_1,Dance_Details_17_2,Dance_Details_17_4,Dance_Details_18_1,Dance_Details_18_2,Dance_Details_18_4,Dance_Details_19_1,Dance_Details_19_2,Dance_Details_19_4,Dance_Details_16_TEXT,Dance_Details_17_TEXT,Dance_Details_18_TEXT,Dance_Details_19_TEXT
+Response ID,Recorded Date,Start Date,End Date,Finished,condition,"In which forms of dance have you been formally trained?
+We define ""formal training"" as taking an official class with a teacher on a regular basis, or intensive personal experience. - Selected Choice","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - I have received no formal dance training. - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - I have received no formal dance training. - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - I have received no formal dance training. - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballet - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballet - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballet - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballroom - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballroom - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Ballroom - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Belly Dancing - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Belly Dancing - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Belly Dancing - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Bhangra - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Bhangra - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Bhangra - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Folk - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Folk - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Folk - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Hip-hop - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Hip-hop - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Hip-hop - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Jazz - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Jazz - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Jazz - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Modern - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Modern - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Modern - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Pop - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Pop - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Pop - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Salsa - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Salsa - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Salsa - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Swing - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Swing - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Swing - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Square - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Square - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Square - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tango - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tango - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tango - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tap - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tap - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Tap - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Experience (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - How recent? (years)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Expertise Rating (0 to 6)","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Text","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Text","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Text","In the first column, please write how long you’ve engaged in formal training in each of the activities you selected.
+ In the second column, please write how recent your training experience was. If you're currently training, please write ""0"".
+
+
+In the third column, please rate your level of expertise on a scale of 0 to 6 in each of the activities you checked (0 = novice, 1 = beginner, 2 = advanced beginner, 3 = beginner intermediate, 4 = advanced intermediate, 5 = advanced, 6 = expert). - Other: - Text"
+"{""ImportId"":""_recordId""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""finished""}","{""ImportId"":""condition""}","{""ImportId"":""QID19""}","{""ImportId"":""QID20_x1_1""}","{""ImportId"":""QID20_x1_2""}","{""ImportId"":""QID20_x1_4""}","{""ImportId"":""QID20_x2_1""}","{""ImportId"":""QID20_x2_2""}","{""ImportId"":""QID20_x2_4""}","{""ImportId"":""QID20_x3_1""}","{""ImportId"":""QID20_x3_2""}","{""ImportId"":""QID20_x3_4""}","{""ImportId"":""QID20_x4_1""}","{""ImportId"":""QID20_x4_2""}","{""ImportId"":""QID20_x4_4""}","{""ImportId"":""QID20_x5_1""}","{""ImportId"":""QID20_x5_2""}","{""ImportId"":""QID20_x5_4""}","{""ImportId"":""QID20_x6_1""}","{""ImportId"":""QID20_x6_2""}","{""ImportId"":""QID20_x6_4""}","{""ImportId"":""QID20_x7_1""}","{""ImportId"":""QID20_x7_2""}","{""ImportId"":""QID20_x7_4""}","{""ImportId"":""QID20_x8_1""}","{""ImportId"":""QID20_x8_2""}","{""ImportId"":""QID20_x8_4""}","{""ImportId"":""QID20_x9_1""}","{""ImportId"":""QID20_x9_2""}","{""ImportId"":""QID20_x9_4""}","{""ImportId"":""QID20_x10_1""}","{""ImportId"":""QID20_x10_2""}","{""ImportId"":""QID20_x10_4""}","{""ImportId"":""QID20_x11_1""}","{""ImportId"":""QID20_x11_2""}","{""ImportId"":""QID20_x11_4""}","{""ImportId"":""QID20_x12_1""}","{""ImportId"":""QID20_x12_2""}","{""ImportId"":""QID20_x12_4""}","{""ImportId"":""QID20_x13_1""}","{""ImportId"":""QID20_x13_2""}","{""ImportId"":""QID20_x13_4""}","{""ImportId"":""QID20_x14_1""}","{""ImportId"":""QID20_x14_2""}","{""ImportId"":""QID20_x14_4""}","{""ImportId"":""QID20_x15_1""}","{""ImportId"":""QID20_x15_2""}","{""ImportId"":""QID20_x15_4""}","{""ImportId"":""QID20_x16_1""}","{""ImportId"":""QID20_x16_2""}","{""ImportId"":""QID20_x16_4""}","{""ImportId"":""QID20_x17_1""}","{""ImportId"":""QID20_x17_2""}","{""ImportId"":""QID20_x17_4""}","{""ImportId"":""QID20_x18_1""}","{""ImportId"":""QID20_x18_2""}","{""ImportId"":""QID20_x18_4""}","{""ImportId"":""QID20_x19_1""}","{""ImportId"":""QID20_x19_2""}","{""ImportId"":""QID20_x19_4""}","{""ImportId"":""QID20_x16_TEXT""}","{""ImportId"":""QID20_x17_TEXT""}","{""ImportId"":""QID20_x18_TEXT""}","{""ImportId"":""QID20_x19_TEXT""}"
+R_3g1TPcfJjkHUHxD,2020-11-11 16:21:31,2020-11-11 15:51:43,2020-11-11 16:21:31,1,action,2,,,,3,17,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_3DbaNhhBNLLYEWM,2020-11-13 15:19:13,2020-11-13 11:01:46,2020-11-13 11:19:09,0,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1g2zd7zZuVlr0Dq,2020-11-19 16:35:28,2020-11-19 15:46:14,2020-11-19 16:35:28,1,stationary,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1pldJdcEsu7L2J0,2020-11-21 12:41:43,2020-11-21 12:17:32,2020-11-21 12:41:43,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_3Hp2ipKsSiBvcoa,2020-11-23 20:35:34,2020-11-23 20:09:07,2020-11-23 20:35:33,1,stationary,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1omYuTMtnUnuTaq,2020-12-06 18:14:14,2020-12-06 13:55:13,2020-12-06 14:14:09,0,control,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_2CWDqbCF4i98RT1,2020-12-07 14:23:21,2020-12-07 13:57:32,2020-12-07 14:23:21,1,stationary,3,,,,,,,0.5,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_21HZDFVEAo8wjmQ,2020-12-11 09:36:18,2020-12-11 09:12:05,2020-12-11 09:36:17,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1r8q2WcV20ldRRJ,2020-12-12 20:38:26,2020-12-12 20:11:09,2020-12-12 20:38:26,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_3PRL47a08LkcgCX,2020-12-12 21:50:37,2020-12-12 21:12:39,2020-12-12 21:50:37,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_2CleyaFI8j68tvi,2020-12-14 21:33:13,2020-12-14 21:06:30,2020-12-14 21:33:12,1,action,"2,16",,,,3,15,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,5,2,4,,,,,,,,,,,,,
+R_2QSQMLCoqAbJ4Uy,2020-12-19 12:00:09,2020-12-19 11:30:55,2020-12-19 12:00:09,1,stationary,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_9XYPYREeHHivfvH,2020-12-19 16:56:08,2020-12-19 16:13:19,2020-12-19 16:56:07,1,action,"16,17",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,4,4,12,12,6,,,,,,,,,,
+R_9Z6V2jy8zanjCet,2021-02-23 13:16:13,2021-02-23 12:46:52,2021-02-23 13:16:12,1,stationary,13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,9,1.5,3,,,,,,,,,,,,,,,,,,,,,,
+R_7OMvDnLUYAXcJ3P,2021-02-23 19:26:14,2021-02-23 18:57:34,2021-02-23 19:26:14,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_qXb6kFYFabudYuB,2021-02-24 15:57:32,2021-02-24 15:28:36,2021-02-24 15:57:32,1,stationary,"2,7,8,9,15",,,,8,8,4,,,,,,,,,,,,,1,7,2,6,6,5,3,6,4,,,,,,,,,,,,,,,,6,6,5,,,,,,,,,,,,,,,,
+R_2D040LrzDnjnxX5,2021-02-24 23:34:41,2021-02-24 23:07:31,2021-02-24 23:34:41,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_7TGS1WSDK2gtkWZ,2021-02-26 04:32:35,2021-02-26 04:00:26,2021-02-26 04:32:35,1,stationary,7,,,,,,,,,,,,,,,,,,,3,0,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_OjIL607w1KL8NLr,2021-02-27 19:11:15,2021-02-27 18:47:00,2021-02-27 19:11:15,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_31GhOM0K5ZZiIOU,2021-02-28 15:10:27,2021-02-28 14:36:21,2021-02-28 15:10:26,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1LNbnaPgt7LK42u,2021-02-28 23:58:59,2021-02-28 19:29:33,2021-02-28 19:58:56,0,action,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_yxNdeK7WQ6p9PcR,2021-03-01 09:44:07,2021-03-01 09:13:50,2021-03-01 09:44:07,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1QLTSqvciPHARmS,2021-03-02 00:45:17,2021-03-01 20:24:22,2021-03-01 20:45:16,0,action,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_OOSMzJUU74DkL2F,2021-03-04 18:42:59,2021-03-04 18:18:06,2021-03-04 18:42:58,1,control,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1d5XYx82RrqtMGa,2021-03-08 00:35:08,2021-03-08 00:05:12,2021-03-08 00:35:08,1,stationary,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_1rPkNLCktfEXhR9,2021-03-12 18:58:27,2021-03-12 18:30:54,2021-03-12 18:58:26,1,control,"2,8,9",,,,9,1.5,4,,,,,,,,,,,,,,,,3,1.5,2,6,1.5,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_0Bqz3ThCxA96a0F,2021-03-13 11:51:33,2021-03-13 11:25:02,2021-03-13 11:51:32,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+R_301972JI9hxcbI2,2021-03-21 16:31:40,2021-03-21 15:58:44,2021-03-21 16:31:40,1,stationary,"12,16",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5,1,1,,,,,,,,,,4,2,4,,,,,,,,,,,,,
+R_2a9NhpsBpqKBtzl,2021-04-09 16:59:32,2021-04-09 16:28:26,2021-04-09 16:59:31,1,action,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
