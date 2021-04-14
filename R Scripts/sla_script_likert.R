@@ -49,6 +49,9 @@ df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 # Then convert Statistical_Organization to a factor:
 df$Statistical_Organization <- as.factor(df$Statistical_Organization)
+df$Condition <- as.factor(df$Condition)
+df$Finished <- as.factor(df$Finished)
+df$Survey <- as.factor(df$Survey)
 
 # Check that it looks good:
 str(df)

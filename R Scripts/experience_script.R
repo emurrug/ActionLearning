@@ -7,7 +7,7 @@ library (dplyr)
 library (ggplot2)
 
 #file2 is a new dataframe that combines the experience scores with comprehension and production data.
-file2 <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/Data + Experience All.csv"
+file2 <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/Study_Data_Experience_Combined.csv"
 df2 <- read_csv(file2)
 View(df2)
 str(df2)

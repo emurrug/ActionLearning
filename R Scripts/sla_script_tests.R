@@ -15,7 +15,7 @@ library(magrittr) #not sure if I need this one?
 
 #### IMPORTING & LABELLING DATA ####
 # Import the file directly from Github:
-myfile <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/SLA Data All.csv"
+myfile <- "~/Documents/Most/SLA_Study/GitHub/ActionLearning/Data/SLA_Official/Concatenated/SLA_Data_All.csv"
 
 # Create dataframe from file:
 df <- read_csv(myfile)
@@ -49,6 +49,9 @@ df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 # Then convert Statistical_Organization to a factor:
 df$Statistical_Organization <- as.factor(df$Statistical_Organization)
+f$Condition <- as.factor(df$Condition)
+df$Finished <- as.factor(df$Finished)
+df$Survey <- as.factor(df$Survey)
 
 # Check that it looks good:
 str(df)
@@ -86,7 +89,7 @@ summary(model)
 # the interaction, you should add a "+" instead. 
 
 # ANOVA test for the interaction between Statistical_Organization and action condition on performance.
-model_production <- aov(df$Correct_Mvt_Scores ~ df$`Statistical_Organization` * df$Condition)
+model_production <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization * df$Condition)
 summary(model_production)
 
 # Same ANOVA test with + (instead of *).
