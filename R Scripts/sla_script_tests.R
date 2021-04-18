@@ -47,9 +47,9 @@ num.columns <- c('T-1_Recognition', 'T-2_Recognition', 'T-3_Recognition', 'T-4_R
 num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Correct_Mvt_T-1', 'Correct_Mvt_T-2', 'Correct_Mvt_T-3', 'Correct_Mvt_T-4')
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
-# Then convert Statistical_Organization to a factor:
+# Then convert Statistical_Organization, Condition, Finished, Survey to a factor:
 df$Statistical_Organization <- as.factor(df$Statistical_Organization)
-f$Condition <- as.factor(df$Condition)
+df$Condition <- as.factor(df$Condition)
 df$Finished <- as.factor(df$Finished)
 df$Survey <- as.factor(df$Survey)
 
@@ -96,7 +96,6 @@ summary(model_production)
 model_production2 <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization + df$Condition)
 summary(model_production2)
 
-
 # ANOVA test for the interaction between Statistical_Organization and action condition on comprehension.
 model_comprehension <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization * df$Condition)
 summary(model_comprehension)
@@ -106,9 +105,17 @@ model_comprehension2 <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organizat
 summary(model_comprehension2)
 
 #### POST HOC ANALYSES ####
-# Post hoc analysis for comprehension scores (RENAME THIS MODEL):
-model_comprehension_ph.emm.s <- emmeans(model_comprehension2, "Condition")
-pairs(model_comprehensions_ph.emm.s)
+# Pairwise analysis for comprehension scores by condition:
+model_comprehension_ph <- emmeans(model_comprehension2, "Condition")
+pairs(model_comprehensions_ph)
+
+# Do I need confidence intervals? I'm not even sure what these would be for...
+model_comprehension_ph %>% confint()
+model_comprehension_ph %>% summary(infer = TRUE)
+
+# Pairwise analysis for production scores by condition:
+model_production_ph <- emmeans(model_production2, "Condition")
+pairs(model_production_ph)
 
 # The linear regression test (notice the similarity to the ANOVA - there's a theoretical reason for that!):
 model2 <- lm(df$DV ~ df$IV1 * df$IV2)
@@ -139,13 +146,13 @@ experience_comprehension + stat_summary(geom = "point")
 # myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
 
 # Actual code for bar graph with action conditions (x) and production scores (y):
-barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistical_Organization`))
+barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = Statistical_Organization))
 barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical_Organization`) +
+  labs(x = "Action Conditions", y = "Production Score", fill = df$Statistical_Organization) +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 # Here's the same bar graph with action conditions (x) and comprehension scores (y):
-barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = `Statistical_Organization`))
+barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = Statistical_Organization))
 barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$`Statistical_Organization`) +
+  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$Statistical_Organization) +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)

@@ -125,30 +125,17 @@ summary(model)
 
 # ANOVA test for whether confidence predicts correctness on production.
 # THIS IS A BETTER TEST BECAUSE CORRECTNESS IS DOING ALL THE PREDICTIVE WORK (AS EVIDENCED BY THE TEST BELOW)
-model_productionL <- aov(df$Mvt_Likert ~ df$Correct_Mvt_Scores)
+model_productionL <- lm(df$Mvt_Likert ~ df$Correct_Mvt_Scores)
 summary(model_productionL)
 
 # ANOVA test for the interaction between correctness and condition to predict confidence:
 model_productionLCC <- aov(df$Mvt_Likert ~ df$Correct_Mvt_Scores * df$Condition)
 summary(model_productionLCC)
 
-# Same ANOVA test with + (instead of *). HAVEN'T UPDATED YET -- WAITING TO SEE IF THE ABOVE CODE IS RIGHT
-model_productionL2 <- aov(df$Correct_Mvt_Scores ~ df$Statistical_Organization + df$Condition)
-summary(model_production2)
-
 
 # ANOVA test for whether confidence predicts correctness on comprehension.
-model_comprehensionL <- aov(df$Total_Likert ~ df$Correct_Trigram_Scores)
+model_comprehensionL <- lm(df$Total_Likert ~ df$Correct_Trigram_Scores)
 summary(model_comprehensionL)
-
-# Same ANOVA test with + (instead of *). HAVEN'T UPDATED YET -- WAITING TO SEE IF THE ABOVE CODE IS RIGHT
-model_comprehensionL2 <- aov(df$Correct_Trigram_Scores ~ df$Statistical_Organization + df$Condition)
-summary(model_comprehension2)
-
-
-# Scatterplot for comprehension and confidence -- HAVEN'T UPDATED YET FROM EXPERIENCE CODE
-# experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Trigram_Scores))
-# experience_comprehension + stat_summary(geom = "point")
 
 
 # This is interesting by I haven't figured out wtf this means...
@@ -186,17 +173,10 @@ experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Tri
 experience_comprehension + stat_summary(geom = "point")
 
 #### GRAPHING ####
-# Template for making a bar graph:
-# myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
+# Scatterplot for comprehension and confidence:
+confidence_production <- ggplot(df, aes(`Mvt_Likert`, `Correct_Mvt_Scores`))
+confidence_production + stat_summary(geom = "point") + geom_smooth(method = lm)
 
-# Actual code for bar graph with action conditions (x) and production scores (y):
-barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = `Statistical_Organization`))
-barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Production Score", fill = df$`Statistical_Organization`) +
-  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
-
-# Here's the same bar graph with action conditions (x) and comprehension scores (y):
-barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = `Statistical_Organization`))
-barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$`Statistical_Organization`) +
-  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
+# Scatterplot for production and confidence:
+confidence_comprehension <- ggplot(df, aes(`Total_Likert`, `Correct_Mvt_Scores`))
+confidence_comprehension + stat_summary(geom = "point") + geom_smooth(method = lm)

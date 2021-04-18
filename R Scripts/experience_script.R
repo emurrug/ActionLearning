@@ -7,7 +7,7 @@ library (dplyr)
 library (ggplot2)
 
 #file2 is a new dataframe that combines the experience scores with comprehension and production data.
-file2 <- "~/Documents/Most/-SLA_Study/GitHub/ActionLearning/Data/SLA Official Data/Concatenated Data/Study_Data_Experience_Combined.csv"
+file2 <- "~/Documents/Most/SLA_Study/GitHub/ActionLearning/Data/SLA_Official/Concatenated/Study_Data_Experience_Combined.csv"
 df2 <- read_csv(file2)
 View(df2)
 str(df2)
@@ -20,7 +20,7 @@ num.columns <- c('T-1c_Likert', 'T-2c_Likert', 'T-3c_Likert', 'T-4c_Likert', 'Co
 df[num.columns] <- sapply(df[num.columns], as.numeric)
 
 df2$Finished <- as.factor(df2$Finished)
-df2$`Statistical Organization` <- as.factor(df2$`Statistical Organization`)
+df2$Statistical_Organization <- as.factor(df2$Statistical_Organization)
 df2$Condition <- as.factor(df2$Condition)
 
 #MC: histogram of total experience scores.
@@ -33,8 +33,8 @@ model_experience_comprehension <- lm(df2$Correct_Trigram_Scores ~ df2$Experience
 summary(model_experience_comprehension)
 
 #MC: scatterplot for comprehension and experience
-experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Trigram_Scores))
-experience_comprehension + stat_summary(geom = "point")
+experience_comprehension <- ggplot(df2, aes(`Experience_Total`, `Correct_Trigram_Scores`))
+experience_comprehension + stat_summary(geom = "point") + geom_smooth(method = lm)
 
 
 #MC: regression for production as predicted by experience.
@@ -42,5 +42,5 @@ model_experience_production <- lm(df2$Correct_Mvt_Scores ~ df2$Experience_Total)
 summary(model_experience_production)
 
 #MC: scatterplot for production and experience
-experience_production <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Mvt_Scores))
-experience_production + stat_summary(geom = "point")
+experience_production <- ggplot(df2, aes(`Experience_Total`, `Correct_Mvt_Scores`))
+experience_production + stat_summary(geom = "point") + geom_smooth(method = lm)
