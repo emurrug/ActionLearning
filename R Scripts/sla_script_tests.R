@@ -146,13 +146,27 @@ experience_comprehension + stat_summary(geom = "point")
 # myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
 
 # Actual code for bar graph with action conditions (x) and production scores (y):
-barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = Statistical_Organization))
+barProduction <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Mvt_Scores))
 barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Production Score", fill = df$Statistical_Organization) +
-  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
+  labs(x = "Statistical Organization", y = "Production Score", title = "Production Score by Statistical Organization") +
+  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning"))
+
+# Used to have:
+#barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = Statistical_Organization))
+#barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+#  labs(x = "Action Conditions", y = "Production Score", fill = df$Statistical_Organization) +
+#  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
 
 # Here's the same bar graph with action conditions (x) and comprehension scores (y):
-barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = Statistical_Organization))
+barComprehension <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Trigram_Scores))
 barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
-  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$Statistical_Organization) +
-  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
+  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
+  labs(x = "Statistical Organization", y = "Comprehension Score", title = "Comprehension Score by Statistical Organization") +
+  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning"))
+
+# Used to have:
+#barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = Statistical_Organization))
+#barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+#  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$Statistical_Organization) +
+#  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
