@@ -147,10 +147,16 @@ experience_comprehension + stat_summary(geom = "point")
 
 # Actual code for bar graph with action conditions (x) and production scores (y):
 barProduction <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Mvt_Scores))
-barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "grey") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
   labs(x = "Statistical Organization", y = "Production Score", title = "Production Score by Statistical Organization") +
-  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning"))
+  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
+  theme_classic() +
+  geom_signif(comparisons = list(c("Random", "Statistical Learning")), map_signif_level=TRUE)
+
+library(ggplot2)
+install.packages("ggsignif")
+library(ggsignif)
 
 # Used to have:
 #barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = Statistical_Organization))
@@ -163,10 +169,19 @@ barComprehension <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Tri
 barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
   labs(x = "Statistical Organization", y = "Comprehension Score", title = "Comprehension Score by Statistical Organization") +
-  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning"))
+  scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
+  theme_classic()
 
 # Used to have:
 #barComprehension <- ggplot(df, aes(Condition, Correct_Trigram_Scores, fill = Statistical_Organization))
 #barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
 #  labs(x = "Action Conditions", y = "Comprehension Score", fill = df$Statistical_Organization) +
 #  stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2)
+
+# For significance asterisk thingies:
+geom_signif(comparisons = list(c("versicolor", "virginica")), 
+            map_signif_level=TRUE)
+ggboxplot(ToothGrowth, x = "dose", y = "len",
+          color = "dose", palette = "jco")+ 
+  stat_compare_means(comparisons = my_comparisons, label.y = c(29, 35, 40))+
+  stat_compare_means(label.y = 45)
