@@ -10,6 +10,8 @@ library(kableExtra)   #formatting table
 library(pastecs) #describes data
 library(dplyr)   #manipulating data to view it
 library(ggplot2) #visualizing data with graphs (we don't talk about the first "ggplot")
+library(ggsignif) #for significance asterisks on graphs
+library(ggpub) #for significance asterisks on graphs
 library(emmeans) #post hoc analyses (contrasts!)
 library(magrittr) #not sure if I need this one?
 
@@ -151,12 +153,8 @@ barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill 
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
   labs(x = "Statistical Organization", y = "Production Score", title = "Production Score by Statistical Organization") +
   scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
-  theme_classic() +
-  geom_signif(comparisons = list(c("Random", "Statistical Learning")), map_signif_level=TRUE)
-
-library(ggplot2)
-install.packages("ggsignif")
-library(ggsignif)
+  stat_compare_means(comparisons = list(c("0", "1")), aes(label = ..p.signif..), label.y = 5.5, method = "t.test") +
+  theme_classic()
 
 # Used to have:
 #barProduction <- ggplot(df, aes(Condition, Correct_Mvt_Scores, fill = Statistical_Organization))
@@ -166,10 +164,11 @@ library(ggsignif)
 
 # Here's the same bar graph with action conditions (x) and comprehension scores (y):
 barComprehension <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Trigram_Scores))
-barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge") +
+barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "grey") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
   labs(x = "Statistical Organization", y = "Comprehension Score", title = "Comprehension Score by Statistical Organization") +
   scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
+  stat_compare_means(comparisons = list(c("0", "1")), aes(label = ..p.signif..), label.y = 5.5, method = "t.test") +
   theme_classic()
 
 # Used to have:
