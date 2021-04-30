@@ -149,9 +149,9 @@ experience_comprehension + stat_summary(geom = "point")
 
 # Actual code for bar graph with action conditions (x) and production scores (y):
 barProduction <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Mvt_Scores))
-barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "grey") +
+barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "chartreuse4") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
-  labs(x = "Statistical Organization", y = "Production Score", title = "Production Score by Statistical Organization") +
+  labs(x = "Statistican Organization", y = "Production Score", title = "Production") +
   scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
   stat_compare_means(comparisons = list(c("0", "1")), aes(label = ..p.signif..), label.y = 5.5, method = "t.test") +
   theme_classic()
@@ -164,9 +164,9 @@ barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill 
 
 # Here's the same bar graph with action conditions (x) and comprehension scores (y):
 barComprehension <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Trigram_Scores))
-barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "grey") +
+barComprehension + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "steelblue3") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
-  labs(x = "Statistical Organization", y = "Comprehension Score", title = "Comprehension Score by Statistical Organization") +
+  labs(x = "Statistical Organization", y = "Comprehension Score", title = "Comprehension") +
   scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
   stat_compare_means(comparisons = list(c("0", "1")), aes(label = ..p.signif..), label.y = 5.5, method = "t.test") +
   theme_classic()
