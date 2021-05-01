@@ -151,7 +151,7 @@ experience_comprehension + stat_summary(geom = "point")
 barProduction <- ggplot(df, aes(x = Statistical_Organization, y = Correct_Mvt_Scores))
 barProduction + stat_summary(fun = mean, geom = "bar", position = "dodge", fill = "chartreuse4") +
   stat_summary(fun.data = mean_cl_normal, geom = "errorbar", position = position_dodge(width=0.90), width = 0.2) +
-  labs(x = "Statistican Organization", y = "Production Score", title = "Production") +
+  labs(x = "Statistical Organization", y = "Production Score", title = "Production") +
   scale_x_discrete(breaks=c("0","1"), labels=c("Random", "Statistical Learning")) +
   stat_compare_means(comparisons = list(c("0", "1")), aes(label = ..p.signif..), label.y = 5.5, method = "t.test") +
   theme_classic()

@@ -112,7 +112,7 @@ confidence_condition_bar + stat_summary(fun = mean, geom = "bar", fill = "White"
   
 
 
-#### ANOVA TESTS ####
+#### ANOVA & CORRELATIONAL TESTS ####
 # Formula for the ANOVA test: 
 model <- aov(df$DV ~ df$IV1 * df$IV2)
 summary(model)
@@ -173,10 +173,12 @@ experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Tri
 experience_comprehension + stat_summary(geom = "point")
 
 #### GRAPHING ####
-# Scatterplot for comprehension and confidence:
-confidence_production <- ggplot(df, aes(`Mvt_Likert`, `Correct_Mvt_Scores`))
-confidence_production + stat_summary(geom = "point") + geom_smooth(method = lm)
-
 # Scatterplot for production and confidence:
+confidence_production <- ggplot(df, aes(`Mvt_Likert`, `Correct_Mvt_Scores`))
+confidence_production + stat_summary(geom = "point") + geom_smooth(method = lm) +
+  labs(x = "Likert Score (Total)", y = "Production Score") +
+  theme_classic()
+
+# Scatterplot for comprehension and confidence:
 confidence_comprehension <- ggplot(df, aes(`Total_Likert`, `Correct_Mvt_Scores`))
 confidence_comprehension + stat_summary(geom = "point") + geom_smooth(method = lm)
