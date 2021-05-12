@@ -143,6 +143,12 @@ summary(model_experience_comprehension)
 experience_comprehension <- ggplot(df2, aes(df2$Experience_Total, df$Correct_Trigram_Scores))
 experience_comprehension + stat_summary(geom = "point")
 
+
+# My attempt at testing whether comprehension accuracy predicted production accuracy:
+model_comp_prod <- lm(df$Correct_Mvt_Scores ~ df$Correct_Trigram_Scores)
+summary(model_comp_prod)
+
+
 #### GRAPHING ####
 # Template for making a bar graph:
 # myGraph <- ggplot(myData, aes(variable for x axis, variable for y axis, fill = independent variable))
