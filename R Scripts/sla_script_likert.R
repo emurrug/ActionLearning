@@ -125,7 +125,7 @@ summary(model)
 
 # ANOVA test for whether confidence predicts correctness on production.
 # THIS IS A BETTER TEST BECAUSE CORRECTNESS IS DOING ALL THE PREDICTIVE WORK (AS EVIDENCED BY THE TEST BELOW)
-model_productionL <- lm(df$Mvt_Likert ~ df$Correct_Mvt_Scores)
+model_productionL <- lm(df$Mvt_Likert_Mean ~ df$Correct_Mvt_Scores)
 summary(model_productionL)
 
 # ANOVA test for the interaction between correctness and condition to predict confidence:
@@ -174,11 +174,16 @@ experience_comprehension + stat_summary(geom = "point")
 
 #### GRAPHING ####
 # Scatterplot for production and confidence:
-confidence_production <- ggplot(df, aes(`Mvt_Likert`, `Correct_Mvt_Scores`))
-confidence_production + stat_summary(geom = "point") + geom_smooth(method = lm) +
-  labs(x = "Likert Score (Total)", y = "Production Score") +
+confidence_production <- ggplot(df, aes(`Mvt_Likert_Mean`, `Correct_Mvt_Scores`))
+confidence_production + geom_point() + geom_smooth(method = lm) +
+  labs(x = "Confidence Score", y = "Production Score") +
+  theme_classic()
+
+confidence_production + stat_summary(geom = "bar", fill = "chartreuse4") +
+  labs(x = "Confidence Score", y = "Production Score") +
+  geom_smooth(method = lm, se = FALSE, color = "grey") +
   theme_classic()
 
 # Scatterplot for comprehension and confidence:
 confidence_comprehension <- ggplot(df, aes(`Total_Likert`, `Correct_Mvt_Scores`))
-confidence_comprehension + stat_summary(geom = "point") + geom_smooth(method = lm)
+confidence_comprehension + geom_point() + geom_smooth(method = lm)
