@@ -196,6 +196,7 @@ ggboxplot(ToothGrowth, x = "dose", y = "len",
   stat_compare_means(comparisons = my_comparisons, label.y = c(29, 35, 40))+
   stat_compare_means(label.y = 45)
 
+
 # Distribution of accuracy on comprehension:
 comp_distr <- hist(df$Correct_Trigram_Scores)
 
