@@ -17,6 +17,7 @@ library(magrittr) #not sure if I need this one?
 
 #### IMPORTING & LABELLING DATA ####
 # Import the file directly from Github:
+
 myfile <- "~/Documents/Most/SLA_Study/GitHub/ActionLearning/Data/SLA_Official/Concatenated/SLA_Data_All.csv"
 
 # Create dataframe from file:
@@ -148,6 +149,10 @@ experience_comprehension + stat_summary(geom = "point")
 model_comp_prod <- lm(df$Correct_Mvt_Scores ~ df$Correct_Trigram_Scores)
 summary(model_comp_prod)
 
+# Scatterplot for comprehension and production:
+comp_prod <- ggplot(df, aes(df$Correct_Trigram_Scores, df$Correct_Mvt_Scores))
+comp_prod + geom_point()
+
 
 #### GRAPHING ####
 # Template for making a bar graph:
@@ -190,3 +195,9 @@ ggboxplot(ToothGrowth, x = "dose", y = "len",
           color = "dose", palette = "jco")+ 
   stat_compare_means(comparisons = my_comparisons, label.y = c(29, 35, 40))+
   stat_compare_means(label.y = 45)
+
+# Distribution of accuracy on comprehension:
+comp_distr <- hist(df$Correct_Trigram_Scores)
+
+# Distribution of accuracy on production:
+prod_distr <- hist(df$Correct_Mvt_Scores)
